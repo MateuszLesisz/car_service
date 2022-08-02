@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text ="#{welcome-page.title}"></title>
+</head>
+<body>
+
+<h1 th:text="#{welcome-page.headline}"></h1>
+
+<nav>
+    <div>
+        <a th:href = "@{/cars}">
+            <button type = "button" th:text = "#{welcome-page.button.submit}"></button>
+        </a>
+    </div>
+</nav>
+
+</body>
+</html>
