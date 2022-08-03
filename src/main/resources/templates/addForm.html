@@ -5,7 +5,7 @@
     <title th:text="#{form.page.title}"></title>
 </head>
 <body>
-<h1> Here will be form</h1>
+<h1 th:text="#{form.page.headline}"> </h1>
 <div>
     <form th:object="${car}" th:action="@{/cars/new}" method="post">
         <label th:for="registrationNumber_input_id" th:text="#{car.registrationNumber}"></label>
@@ -31,6 +31,13 @@
 </form>
 </div>
 <nav>
+    <div>
+        <a th:href="@{/cars}">
+            <button type="button" th:text="#{form.page.add.button}"></button>
+        </a>
+        <br>
+        <br>
+    </div>
   <div>
     <a th:href="@{/}">
       <button type="button" th:text="#{form.page.button.return}"></button>
