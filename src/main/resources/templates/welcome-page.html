@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1 th:text="#{welcome-page.headline}"></h1>
+<h1 th:text="#{welcome-page.all.cars}"></h1>
 
 <nav>
     <div>
@@ -14,7 +14,13 @@
             <button type = "button" th:text = "#{welcome-page.button.submit}"></button>
         </a>
     </div>
-</nav>
+    <h1 th:text="#{welcome.page.add.car.for.repair}"></h1>
+    <div>
+        <a th:href="@{/cars/new}">
+            <button type="button" th:text="#{welcome-page.button.submit}"></button>
+        </a>
+    </div>
 
+</nav>
 </body>
 </html>

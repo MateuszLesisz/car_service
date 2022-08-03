@@ -1,0 +1,39 @@
+package com.infoshareacademy.car_service.Model;
+
+import com.infoshareacademy.car_service.dto.Color;
+import com.infoshareacademy.car_service.entity.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Car implements Entity<Long> {
+
+    private Long id;
+    private String registrationNumber;
+    private String name;
+    private Color color;
+    private Integer yearOfProduction;
+    private LocalDate today;
+    private Boolean isFixed;
+    private List<Car> elements = new LinkedList<>();
+
+    @Override
+    public Long getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(Long aLong) {
+
+    }
+}
