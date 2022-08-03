@@ -6,6 +6,30 @@
 </head>
 <body>
 <h1> Here will be form</h1>
+<div>
+    <form th:object="${car}" th:action="@{/cars/new}" method="post">
+        <label th:for="registrationNumber_input_id" th:text="#{car.registrationNumber}"></label>
+        <br>
+        <input type="text" id="registrationNumber_input_id" th:field="*{registrationNumber}">
+        <br>
+        <br>
+        <label th:for="name_input_id" th:text="#{car.name}"></label>
+        <br>
+        <input type="text" id="name_input_id" th:field="*{name}">
+        <br>
+        <br>
+        <label th:for="color_input_id" th:text="#{car.color}"></label>
+        <br>
+        <input type="text" id="color_input_id" th:field="*{color}">
+        <br>
+        <br>
+        <label th:for="yearOfProduction_input_id" th:text="#{car.yearOfProduction}"></label>
+        <br>
+        <input type="text" id="yearOfProduction_input_id" th:field="*{yearOfProduction}">
+        <br>
+        <br>
+</form>
+</div>
 <nav>
   <div>
     <a th:href="@{/}">
