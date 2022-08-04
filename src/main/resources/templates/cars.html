@@ -8,6 +8,15 @@
 
 <h1 th:text="#{cars.headline}"></h1>
 
+<ul>
+    <li th:text="${cars.registrationNumber}"> RN = TKI80K32</li>
+    <li th:text="${cars.name}">Name: Hyundai</li>
+    <li th:text="${cars.color}">Color: Black</li>
+    <li th:text="${cars.yearOfProduction}">YoP: 1989</li>
+    <li th:text="${cars.isFixed}">Fixed: False</li>
+    <li th:text="${cars.today}">Date: 11.07.1997</li>
+</ul>
+
 <nav>
     <div>
         <a th:href = "@{/}">

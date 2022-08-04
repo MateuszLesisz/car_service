@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -22,10 +23,14 @@ public class CarController {
         return "welcome-page";
     }
 
-    @GetMapping("cars")
-    public String getCars() {
+    @GetMapping("car/{id}")
+    public String getCars(@PathVariable Long id, Model model) {
+        CarDto carDto = carService.find(id);
+        model.addAttribute("cars", carDto);
         return "cars";
     }
+
+
 
     @GetMapping("/cars/new")
     public String getCarForm(Model model) {
