@@ -28,15 +28,15 @@ public class CarController {
     }
 
     @GetMapping("/cars/new")
-    public String getCar(Model model) {
+    public String getCarForm(Model model) {
         model.addAttribute("car", new CarDto());
         return "addForm";
     }
 
     @PostMapping(value ="/cars/new")
-    public String addCar(@ModelAttribute ("car") CarDto carDto) {
+    public String sendCar(@ModelAttribute ("car") CarDto carDto) {
         carService.create(carDto);
-        return "addForm-succes";
+        return "addForm-success";
 
     }
 }

@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title th:text="'You correctly add new car for repair!'"></title>
 </head>
 <body>
+
+<nav>
+    <div>
+        <a th:href="@{/}">
+            <button type="button" th:text="#{form.page.button.return}"></button>
+        </a>
+    </div>
+</nav>
 
 </body>
 </html>

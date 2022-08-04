@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="#{form.page.title}"></title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <h1 th:text="#{form.page.headline}"> </h1>
@@ -28,16 +29,10 @@
         <input type="text" id="yearOfProduction_input_id" th:field="*{yearOfProduction}">
         <br>
         <br>
+        <input type="submit" th:value="'submit'">
 </form>
 </div>
 <nav>
-    <div>
-        <a th:href="@{/cars}">
-            <button type="button" th:text="#{form.page.add.button}"></button>
-        </a>
-        <br>
-        <br>
-    </div>
   <div>
     <a th:href="@{/}">
       <button type="button" th:text="#{form.page.button.return}"></button>
