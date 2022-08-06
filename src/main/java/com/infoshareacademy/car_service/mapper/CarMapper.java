@@ -9,6 +9,7 @@ public class CarMapper {
 
     public CarDto toDto(Car car) {
         CarDto carDto = new CarDto();
+        carDto.setId(car.getId());
         carDto.setColor(car.getColor());
         carDto.setName(car.getName());
         carDto.setToday(car.getToday());
@@ -20,6 +21,7 @@ public class CarMapper {
 
     public Car toEntity(CarDto carDto) {
         Car car = new Car();
+        car.setId(carDto.getId());
         car.setColor(carDto.getColor());
         car.setName(carDto.getName());
         car.setToday(carDto.getToday());

@@ -1,33 +1,35 @@
 package com.infoshareacademy.car_service.repository;
 
 import com.infoshareacademy.car_service.Model.Car;
+import com.infoshareacademy.car_service.dto.Color;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
+import java.time.LocalDate;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
 public class CarRepository extends FakeRepository<Long, Car> {
 
-    private final AtomicInteger nextId = new AtomicInteger();
-    private final AtomicInteger nextElementId = new AtomicInteger();
+    private final AtomicLong nextId = new AtomicLong(1L);
 
     @PostConstruct
     public void initDb() {
 
-    }
+        Car threads = new Car();
+        threads.setName("VW");
+        threads.setColor(Color.BLACK);
+        threads.setIsFixed(false);
+        threads.setYearOfProduction(1998);
+        threads.setRegistrationNumber("TKI 80C3");
+        threads.setToday(LocalDate.now());
 
-    public void save(Car entity) {
-        entity.getElements().forEach(e ->  {
-            if(e.getId() == null) {
-                e.setId((long) nextElementId.getAndIncrement());
-            }
-        });
-        super.save(entity);
+        save(threads);
     }
 
     @Override
     Long nextId() {
-        return (long) nextId.getAndIncrement();
+        return nextId.getAndIncrement();
     }
 }

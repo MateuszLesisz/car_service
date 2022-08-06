@@ -14,6 +14,7 @@ public abstract class FakeRepository <T, E extends Entity<T>>{
         if(id == null) {
             entity.setId(nextId());
         }
+        fakeDb.put(entity.getId(), entity);
     }
 
     public E findById(T id) {

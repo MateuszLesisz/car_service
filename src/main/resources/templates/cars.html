@@ -6,9 +6,17 @@
 </head>
 <body>
 
+<nav>
+    <div>
+        <a th:href="@{/car/1}">
+        </a>
+    </div>
+</nav>
+
 <h1 th:text="#{cars.headline}"></h1>
 
 <ul>
+    <li th:text="${cars.id}">1</li>
     <li th:text="${cars.registrationNumber}"> RN = TKI80K32</li>
     <li th:text="${cars.name}">Name: Hyundai</li>
     <li th:text="${cars.color}">Color: Black</li>

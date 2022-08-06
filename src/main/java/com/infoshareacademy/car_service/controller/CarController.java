@@ -25,20 +25,17 @@ public class CarController {
 
     @GetMapping("car/{id}")
     public String getCars(@PathVariable Long id, Model model) {
-        CarDto carDto = carService.find(id);
-        model.addAttribute("cars", carDto);
+        model.addAttribute("cars", carService.find(id));
         return "cars";
     }
 
-
-
-    @GetMapping("/cars/new")
+    @GetMapping("/cars")
     public String getCarForm(Model model) {
         model.addAttribute("car", new CarDto());
         return "addForm";
     }
 
-    @PostMapping(value ="/cars/new")
+    @PostMapping(value ="/cars")
     public String sendCar(@ModelAttribute ("car") CarDto carDto) {
         carService.create(carDto);
         return "addForm-success";

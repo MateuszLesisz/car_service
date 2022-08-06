@@ -14,8 +14,6 @@ import java.util.List;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class Car implements Entity<Long> {
 
     private Long id;
@@ -25,15 +23,5 @@ public class Car implements Entity<Long> {
     private Integer yearOfProduction;
     private LocalDate today;
     private Boolean isFixed;
-    private List<Car> elements = new LinkedList<>();
 
-    @Override
-    public Long getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(Long aLong) {
-
-    }
 }

@@ -21,8 +21,6 @@ private final CarMapper mapper;
     }
 
     public void create(CarDto carDto) {
-        carDto.setIsFixed(false);
-        carDto.setToday(LocalDate.now());
     Car car = mapper.toEntity(carDto);
     carRepository.save(car);
     }
