@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title th:text ="#{cars.title}"></title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
@@ -16,13 +17,13 @@
 <h1 th:text="#{cars.headline}"></h1>
 
 <ul>
-    <li th:text="${cars.id}">1</li>
-    <li th:text="${cars.registrationNumber}"> RN = TKI80K32</li>
-    <li th:text="${cars.name}">Name: Hyundai</li>
-    <li th:text="${cars.color}">Color: Black</li>
-    <li th:text="${cars.yearOfProduction}">YoP: 1989</li>
-    <li th:text="${cars.isFixed}">Fixed: False</li>
-    <li th:text="${cars.today}">Date: 11.07.1997</li>
+    <li th:text="#{car.id} + ': ' + ${cars.id}"></li>
+    <li th:text="#{car.registrationNumber} + ': ' + ${cars.registrationNumber}"></li>
+    <li th:text="#{car.name} + ': ' + ${cars.name}"></li>
+    <li th:text="#{car.color} + ': ' + ${cars.color}"></li>
+    <li th:text="#{car.yearOfProduction} + ': ' + ${cars.yearOfProduction}"></li>
+    <li th:text="#{car.isFixed} + ': ' + ${cars.isFixed}"></li>
+    <li th:text="#{car.date} + ': ' + ${cars.today}"></li>
 </ul>
 
 <nav>
