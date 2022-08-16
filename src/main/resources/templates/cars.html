@@ -22,8 +22,12 @@
     <li th:text="#{car.name} + ': ' + ${cars.name}"></li>
     <li th:text="#{car.color} + ': ' + ${cars.color}"></li>
     <li th:text="#{car.yearOfProduction} + ': ' + ${cars.yearOfProduction}"></li>
-    <li th:text="#{car.isFixed} + ': ' + ${cars.isFixed}"></li>
     <li th:text="#{car.date} + ': ' + ${cars.today}"></li>
+    <div th:switch="${cars.isFixed}">
+        <li th:if="${cars.isFixed}" th:text="#{car.isFixed} + ': ' + #{car.fixed}"></li>
+        <li th:unless="${cars.isFixed}" th:text="#{car.isFixed} + ': ' + #{car.not.fixed}"></li>
+    </div>
+
 </ul>
 
 <nav>
