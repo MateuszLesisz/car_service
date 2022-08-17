@@ -4,6 +4,8 @@ import com.infoshareacademy.car_service.Model.Car;
 import com.infoshareacademy.car_service.dto.CarDto;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+
 @Component
 public class CarMapper {
 
@@ -24,10 +26,10 @@ public class CarMapper {
         car.setId(carDto.getId());
         car.setColor(carDto.getColor());
         car.setName(carDto.getName());
-        car.setToday(carDto.getToday());
+        car.setToday(LocalDate.now());
         car.setRegistrationNumber(carDto.getRegistrationNumber());
         car.setIsFixed(carDto.getIsFixed());
-        car.setYearOfProduction(car.getYearOfProduction());
+        car.setYearOfProduction(carDto.getYearOfProduction());
         return car;
     }
 }

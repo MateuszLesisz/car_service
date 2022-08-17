@@ -26,7 +26,7 @@
         <th th:text="#{car.date}"></th>
         <th th:text="#{car.isFixed}"></th>
     </tr>
-    <tr th:each="car : ${car}">
+    <tr th:each="car, iterStat : ${car}" th:class="${iterStat.odd}? 'white-row'">
         <td th:text="${car.id}"></td>
         <td th:text="${car.registrationNumber}"></td>
         <td th:text="${car.name}"></td>
@@ -35,7 +35,7 @@
         <td th:text="${car.today}"></td>
         <td>
             <a th:href="@{/car/{id}(id=${car.id})}">
-                <button type="button" th:text="#{car.isFixed}"></button>
+                <button type="button" th:text="#{car.fix}"></button>
             </a>
         </td>
     </tr>

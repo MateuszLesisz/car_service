@@ -27,21 +27,23 @@ public class CarController {
         return "car";
     }
 
-    @GetMapping("/cars")
-    public String getCarForm(Model model) {
-        model.addAttribute("car", new CarDto());
-        return "addForm";
-    }
-
-    @PostMapping(value ="/cars")
-    public String sendCar(@ModelAttribute ("car") CarDto carDto) {
-        carService.create(carDto);
-        return "addForm-success";
-    }
-
     @GetMapping("/cars/table")
     public String getAllCars(Model model) {
         model.addAttribute("car", carService.findAll());
         return "cars-table";
     }
+
+    @GetMapping("/cars/new")
+    public String getCarForm(Model model) {
+        model.addAttribute("car", new CarDto());
+        return "addForm";
+    }
+
+    @PostMapping(value ="/cars/new")
+    public String sendCar(@ModelAttribute ("car") CarDto carDto) {
+        carService.create(carDto);
+        return "addForm-success";
+    }
+
+
 }

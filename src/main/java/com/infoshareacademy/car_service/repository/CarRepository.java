@@ -20,7 +20,7 @@ public class CarRepository extends FakeRepository<Long, Car> {
 
         Car threads = new Car();
         threads.setName("VW");
-        threads.setColor(Color.BLACK);
+        threads.setColor("blue");
         threads.setIsFixed(false);
         threads.setYearOfProduction(1998);
         threads.setRegistrationNumber("TKI 80C3");

@@ -15,7 +15,7 @@ public class CarDto {
     private Long id;
     private String registrationNumber;
     private String name;
-    private Color color;
+    private String color;
     private Integer yearOfProduction;
     private LocalDate today;
     private Boolean isFixed;
