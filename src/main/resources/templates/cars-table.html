@@ -33,7 +33,11 @@
         <td th:text="${car.color}"></td>
         <td th:text="${car.yearOfProduction}"></td>
         <td th:text="${car.today}"></td>
-        <td th:text="${car.isFixed}"></td>
+        <td>
+            <a th:href="@{/car/{id}(id=${car.id})}">
+                <button type="button" th:text="#{car.isFixed}"></button>
+            </a>
+        </td>
     </tr>
 </table>
 <nav>
