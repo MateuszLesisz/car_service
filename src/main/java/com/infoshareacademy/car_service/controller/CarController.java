@@ -5,10 +5,13 @@ import com.infoshareacademy.car_service.service.CarService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import javax.validation.Valid;
 
 @Controller
 @AllArgsConstructor
@@ -40,7 +43,11 @@ public class CarController {
     }
 
     @PostMapping(value ="/cars/new")
-    public String sendCar(@ModelAttribute ("car") CarDto carDto) {
+    public String sendCar(@Valid @ModelAttribute ("car") CarDto carDto,
+                          BindingResult bindingResult) {
+        if(bindingResult.hasErrors()) {
+            return "addForm";
+        }
         carService.create(carDto);
         return "addForm-success";
     }
