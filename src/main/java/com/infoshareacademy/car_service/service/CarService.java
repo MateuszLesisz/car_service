@@ -6,6 +6,7 @@ import com.infoshareacademy.car_service.mapper.CarMapper;
 import com.infoshareacademy.car_service.repository.CarRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,6 +23,7 @@ private final CarMapper mapper;
     }
 
     public void create(CarDto carDto) {
+        carDto.setToday(LocalDate.now());
     Car car = mapper.toEntity(carDto);
     carRepository.save(car);
     }

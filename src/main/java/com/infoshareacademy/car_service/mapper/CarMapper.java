@@ -26,7 +26,7 @@ public class CarMapper {
         car.setId(carDto.getId());
         car.setColor(carDto.getColor());
         car.setName(carDto.getName());
-        car.setToday(LocalDate.now());
+        car.setToday(carDto.getToday());
         car.setRegistrationNumber(carDto.getRegistrationNumber());
         car.setIsFixed(carDto.getIsFixed());
         car.setYearOfProduction(carDto.getYearOfProduction());
