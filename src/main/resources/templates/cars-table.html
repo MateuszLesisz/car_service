@@ -26,8 +26,16 @@
         <th th:text="#{car.date}"></th>
         <th th:text="#{car.isFixed}"></th>
     </tr>
+    <tr th:each="car : ${car}">
+        <td th:text="${car.id}"></td>
+        <td th:text="${car.registrationNumber}"></td>
+        <td th:text="${car.name}"></td>
+        <td th:text="${car.color}"></td>
+        <td th:text="${car.yearOfProduction}"></td>
+        <td th:text="${car.today}"></td>
+        <td th:text="${car.isFixed}"></td>
+    </tr>
 </table>
-
 <nav>
     <div>
         <a th:href = "@{/}">
