@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text ="#{cars.title}"></title>
+    <link th:href="@{/css/table.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<nav>
+    <div>
+        <a th:href="@{/}">
+        </a>
+    </div>
+</nav>
+
+<h1 th:text="#{cars.headline}"></h1>
+
+<table>
+    <tr>
+        <th th:text="#{car.id}"></th>
+        <th th:text="#{car.registrationNumber}"></th>
+        <th th:text="#{car.name}"></th>
+        <th th:text="#{car.color}"></th>
+        <th th:text="#{car.yearOfProduction}"></th>
+        <th th:text="#{car.date}"></th>
+        <th th:text="#{car.isFixed}"></th>
+    </tr>
+</table>
+
+<nav>
+    <div>
+        <a th:href = "@{/}">
+            <button type = "button" th:text = "#{cars.back.button}"></button>
+        </a>
+    </div>
+</nav>
+</body>
+</html>

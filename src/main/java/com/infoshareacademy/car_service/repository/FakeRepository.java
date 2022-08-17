@@ -1,7 +1,9 @@
 package com.infoshareacademy.car_service.repository;
 
+import com.infoshareacademy.car_service.Model.Car;
 import com.infoshareacademy.car_service.entity.Entity;
 
+import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -21,4 +23,8 @@ public abstract class FakeRepository <T, E extends Entity<T>>{
         return fakeDb.get(id);
     }
     abstract T nextId();
+
+    public Collection<E> findAll() {
+        return fakeDb.values();
+    }
 }
