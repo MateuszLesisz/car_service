@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
@@ -14,11 +15,11 @@ import java.time.LocalDate;
 public class CarDto {
 
     private Long id;
-    @NotNull
+    @NotBlank
     private String registrationNumber;
-    @NotNull
+    @NotBlank
     private String name;
-    @NotNull
+    @NotBlank
     private String color;
     @NotNull
     private Integer yearOfProduction;
