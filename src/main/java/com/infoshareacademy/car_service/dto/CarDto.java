@@ -1,8 +1,6 @@
 package com.infoshareacademy.car_service.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
@@ -19,8 +17,8 @@ public class CarDto {
     private String registrationNumber;
     @NotBlank
     private String name;
-    @NotBlank
-    private String color;
+    @NotNull
+    private Color color;
     @NotNull
     private Integer yearOfProduction;
     private LocalDate today;
