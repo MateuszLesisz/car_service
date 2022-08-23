@@ -4,8 +4,6 @@ import com.infoshareacademy.car_service.Model.Car;
 import com.infoshareacademy.car_service.dto.CarDto;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
-
 @Component
 public class CarMapper {
 
