@@ -22,9 +22,9 @@ public class Config {
     }
 
     @Bean
-   public LocaleResolver localeResolver() {
-       SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
-      sessionLocaleResolver.setDefaultLocale(Locale.ENGLISH);
-       return sessionLocaleResolver;
-   }
+    public LocaleResolver localeResolver() {
+        SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
+        sessionLocaleResolver.setDefaultLocale(Locale.ENGLISH);
+        return sessionLocaleResolver;
+    }
 }

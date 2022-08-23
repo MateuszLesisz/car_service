@@ -42,15 +42,13 @@ public class CarController {
         return "addForm";
     }
 
-    @PostMapping(value ="/cars/new")
-    public String sendCar(@Valid @ModelAttribute ("car") CarDto carDto,
+    @PostMapping(value = "/cars/new")
+    public String sendCar(@Valid @ModelAttribute("car") CarDto carDto,
                           BindingResult bindingResult) {
-        if(bindingResult.hasErrors()) {
+        if (bindingResult.hasErrors()) {
             return "addForm";
         }
         carService.create(carDto);
         return "addForm-success";
     }
-
-
 }
