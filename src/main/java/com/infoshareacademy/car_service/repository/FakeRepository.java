@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public abstract class FakeRepository <T, E extends Entity<T>>{
 
-    private final Map<T,E> fakeDb = new ConcurrentHashMap<>();
+    protected final Map<T,E> fakeDb = new ConcurrentHashMap<>();
 
     public void save(E entity) {
         T id = entity.getId();

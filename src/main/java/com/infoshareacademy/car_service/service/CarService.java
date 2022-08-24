@@ -22,11 +22,15 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class CarService {
 
+    private static final String CAR_REPOSITORY_JSON_FILE = "src/main/resources/carsForRepair.json";
+    private final Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new GsonLocalDate()).setPrettyPrinting().create();
+
     private final CarRepository carRepository;
     private final CarMapper mapper;
 
     public void create(CarDto carDto) {
         carDto.setToday(LocalDate.now());
+        carDto.setIsFixed(false);
         Car car = mapper.toEntity(carDto);
         carRepository.save(car);
         saveToFile();
@@ -46,9 +50,8 @@ public class CarService {
 
     public void saveToFile() {
         Collection<Car> cars = carRepository.findAll();
-        Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new GsonLocalDate()).setPrettyPrinting().create();
         try {
-            Writer writer = new FileWriter("src/main/resources/carsForRepair.json");
+            Writer writer = new FileWriter(CAR_REPOSITORY_JSON_FILE);
             gson.toJson(cars, writer);
             writer.flush();
             writer.close();
