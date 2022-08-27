@@ -21,7 +21,7 @@ public class CarRepository extends FakeRepository<Long, Car> {
 
     private static final String CAR_REPOSITORY_JSON_FILE = "src/main/resources/carsForRepair.json";
     private final Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new GsonLocalDate()).setPrettyPrinting().create();
-    private final AtomicLong nextId = new AtomicLong();
+    private  volatile AtomicLong nextId = new AtomicLong(1L);
 
     @PostConstruct
     public void initDb() {
@@ -34,7 +34,7 @@ public class CarRepository extends FakeRepository<Long, Car> {
 
     @Override
     Long nextId() {
-        return nextId.addAndGet(fakeDb.size() + 1L);
+        return nextId.getAndIncrement();
     }
 
     public void loadFromFile() {
