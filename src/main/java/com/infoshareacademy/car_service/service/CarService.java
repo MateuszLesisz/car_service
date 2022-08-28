@@ -25,38 +25,15 @@ public class CarService {
     private static final String CAR_REPOSITORY_JSON_FILE = "src/main/resources/carsForRepair.json";
     private final Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new GsonLocalDate()).setPrettyPrinting().create();
 
-    private final CarRepository carRepository;
-    private final CarMapper mapper;
-
-    public void create(CarDto carDto) {
-        carDto.setToday(LocalDate.now());
-        carDto.setIsFixed(false);
-        Car car = mapper.toEntity(carDto);
-        carRepository.save(car);
-        saveToFile();
-    }
-
-    public CarDto find(Long id) {
-        Car car = carRepository.findById(id);
-        return mapper.toDto(car);
-    }
-
-    public List<CarDto> findAll() {
-        Collection<Car> cars = carRepository.findAll();
-        return cars.stream()
-                .map(mapper::toDto)
-                .collect(Collectors.toList());
-    }
-
-    public void saveToFile() {
-        Collection<Car> cars = carRepository.findAll();
-        try {
-            Writer writer = new FileWriter(CAR_REPOSITORY_JSON_FILE);
-            gson.toJson(cars, writer);
-            writer.flush();
-            writer.close();
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-    }
+//    public void saveToFile() {
+////        Collection<Car> cars = carRepository.findAll();
+//        try {
+//            Writer writer = new FileWriter(CAR_REPOSITORY_JSON_FILE);
+////            gson.toJson(cars, writer);
+//            writer.flush();
+//            writer.close();
+//        } catch (IOException e) {
+//            System.out.println(e.getMessage());
+//        }
+//    }
 }

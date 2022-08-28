@@ -24,17 +24,17 @@ public class CarController {
         return "welcome-page";
     }
 
-    @GetMapping("car/{id}")
-    public String getCars(@PathVariable Long id, Model model) {
-        model.addAttribute("cars", carService.find(id));
-        return "car";
-    }
+//    @GetMapping("car/{id}")
+//    public String getCars(@PathVariable Long id, Model model) {
+//        model.addAttribute("cars", carService.find(id));
+//        return "car";
+//    }
 
-    @GetMapping("/cars/table")
-    public String getAllCars(Model model) {
-        model.addAttribute("car", carService.findAll());
-        return "cars-table";
-    }
+//    @GetMapping("/cars/table")
+//    public String getAllCars(Model model) {
+//        model.addAttribute("car", carService.findAll());
+//        return "cars-table";
+//    }
 
     @GetMapping("/cars/new")
     public String getCarForm(Model model) {
@@ -42,13 +42,13 @@ public class CarController {
         return "addForm";
     }
 
-    @PostMapping(value = "/cars/new")
-    public String sendCar(@Valid @ModelAttribute("car") CarDto carDto,
-                          BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return "addForm";
-        }
-        carService.create(carDto);
-        return "addForm-success";
-    }
+//    @PostMapping(value = "/cars/new")
+//    public String sendCar(@Valid @ModelAttribute("car") CarDto carDto,
+//                          BindingResult bindingResult) {
+//        if (bindingResult.hasErrors()) {
+//            return "addForm";
+//        }
+//        carService.create(carDto);
+//        return "addForm-success";
+//    }
 }
