@@ -5,16 +5,15 @@ import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.UUID;
 
 
 @Getter
 @Setter
 public class CarDto {
 
-    private Long id;
+    private UUID id;
     @NotBlank
     private String registrationNumber;
     @NotBlank

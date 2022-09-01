@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -24,6 +25,7 @@ public class Car {
     @Id
     @Column(name = COLUMN_PREFIX + "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Type(type = "uuid-char")
     private UUID id;
 
     @Column(name = COLUMN_PREFIX + "registration_number", nullable = false)
