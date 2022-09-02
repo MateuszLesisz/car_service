@@ -15,7 +15,6 @@ import java.util.UUID;
 @Setter
 @Entity
 @Table(name = Car.TABLE_NAME)
-@AllArgsConstructor
 @NoArgsConstructor
 public class Car {
 
@@ -24,7 +23,7 @@ public class Car {
 
     @Id
     @Column(name = COLUMN_PREFIX + "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Type(type = "uuid-char")
     private UUID id;
 
@@ -46,4 +45,12 @@ public class Car {
     @Column(name = COLUMN_PREFIX + "is_fixed", nullable = false)
     private Boolean isFixed;
 
+    public Car(String registrationNumber, String name, Color color, Integer yearOfProduction, LocalDate today, Boolean isFixed) {
+        this.registrationNumber = registrationNumber;
+        this.name = name;
+        this.color = color;
+        this.yearOfProduction = yearOfProduction;
+        this.today = today;
+        this.isFixed = isFixed;
+    }
 }
