@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class Car {
 
-    public static final String TABLE_NAME = "car";
+    public static final String TABLE_NAME = "broken_cars";
     public static final String COLUMN_PREFIX = "c_";
 
     @Id
