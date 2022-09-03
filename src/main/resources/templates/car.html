@@ -16,15 +16,15 @@
 <h1 th:text="#{cars.headline}"></h1>
 
 <ul>
-    <li th:text="#{car.id} + ': ' + ${cars.id}"></li>
-    <li th:text="#{car.registrationNumber} + ': ' + ${cars.registrationNumber}"></li>
-    <li th:text="#{car.name} + ': ' + ${cars.name}"></li>
-    <li th:text="#{car.color} + ': ' + ${cars.color}"></li>
-    <li th:text="#{car.yearOfProduction} + ': ' + ${cars.yearOfProduction}"></li>
-    <li th:text="#{car.date} + ': ' + ${cars.today}"></li>
-    <div th:switch="${cars.isFixed}">
-        <li th:if="${cars.isFixed}" th:text="#{car.isFixed} + ': ' + #{car.fixed}"></li>
-        <li th:unless="${cars.isFixed}" th:text="#{car.isFixed} + ': ' + #{car.not.fixed}"></li>
+    <li th:text="#{car.id} + ': ' + ${cars.get().id}"></li>
+    <li th:text="#{car.registrationNumber} + ': ' + ${cars.get().registrationNumber}"></li>
+    <li th:text="#{car.name} + ': ' + ${cars.get().name}"></li>
+    <li th:text="#{car.color} + ': ' + ${cars.get().color}"></li>
+    <li th:text="#{car.yearOfProduction} + ': ' + ${cars.get().yearOfProduction}"></li>
+    <li th:text="#{car.date} + ': ' + ${cars.get().today}"></li>
+    <div th:switch="${cars.get().isFixed}">
+        <li th:if="${cars.get().isFixed}" th:text="#{car.isFixed} + ': ' + #{car.fixed}"></li>
+        <li th:unless="${cars.get().isFixed}" th:text="#{car.isFixed} + ': ' + #{car.not.fixed}"></li>
     </div>
 
 </ul>

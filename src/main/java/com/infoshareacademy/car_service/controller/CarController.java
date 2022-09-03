@@ -28,7 +28,7 @@ public class CarController {
     }
 
     @GetMapping("car/{id}")
-    public String getCars(@PathVariable UUID id, Model model) {
+    public String getCars(@PathVariable Long id, Model model) {
         model.addAttribute("cars", carRepository.findById(id));
         return "car";
     }

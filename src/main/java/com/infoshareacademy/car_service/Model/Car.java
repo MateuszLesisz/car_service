@@ -2,11 +2,9 @@ package com.infoshareacademy.car_service.Model;
 
 import com.infoshareacademy.car_service.dto.Color;
 import lombok.*;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Getter
 @Setter
@@ -23,9 +21,8 @@ public class Car {
 
     @Id
     @Column(name = COLUMN_PREFIX + "id")
-    @GeneratedValue
-    @Type(type = "uuid-char")
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = COLUMN_PREFIX + "registration_number", nullable = false)
     private String registrationNumber;

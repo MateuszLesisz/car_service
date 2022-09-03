@@ -13,7 +13,7 @@ import java.util.UUID;
 @Setter
 public class CarDto {
 
-    private UUID id;
+    private Long id;
     @NotBlank
     private String registrationNumber;
     @NotBlank
