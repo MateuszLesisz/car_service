@@ -2,36 +2,36 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text ="#{cars.title}"></title>
+    <title th:text ="#{carForRepairs.title}"></title>
 </head>
 <body>
 
 <nav>
     <div>
-        <a th:href="@{/cars/table}">
+        <a th:href="@{/carForRepairs/table}">
         </a>
     </div>
 </nav>
 
-<h1 th:text="#{cars.headline}"></h1>
+<h1 th:text="#{carForRepairs.headline}"></h1>
 
 <ul>
-    <li th:text="#{car.id} + ': ' + ${cars.get().id}"></li>
-    <li th:text="#{car.registrationNumber} + ': ' + ${cars.get().registrationNumber}"></li>
-    <li th:text="#{car.name} + ': ' + ${cars.get().name}"></li>
-    <li th:text="#{car.color} + ': ' + ${cars.get().color}"></li>
-    <li th:text="#{car.yearOfProduction} + ': ' + ${cars.get().yearOfProduction}"></li>
-    <li th:text="#{car.date} + ': ' + ${cars.get().today}"></li>
-    <div th:switch="${cars.get().isFixed}">
-        <li th:if="${cars.get().isFixed}" th:text="#{car.isFixed} + ': ' + #{car.fixed}"></li>
-        <li th:unless="${cars.get().isFixed}" th:text="#{car.isFixed} + ': ' + #{car.not.fixed}"></li>
+    <li th:text="#{carForRepair.id} + ': ' + ${carForRepairs.get().id}"></li>
+    <li th:text="#{carForRepair.registrationNumber} + ': ' + ${carForRepairs.get().registrationNumber}"></li>
+    <li th:text="#{carForRepair.name} + ': ' + ${carForRepairs.get().name}"></li>
+    <li th:text="#{carForRepair.color} + ': ' + ${carForRepairs.get().color}"></li>
+    <li th:text="#{carForRepair.yearOfProduction} + ': ' + ${carForRepairs.get().yearOfProduction}"></li>
+    <li th:text="#{carForRepair.date} + ': ' + ${carForRepairs.get().today}"></li>
+    <div th:switch="${carForRepairs.get().isFixed}">
+        <li th:if="${carForRepairs.get().isFixed}" th:text="#{carForRepair.isFixed} + ': ' + #{carForRepair.fixed}"></li>
+        <li th:unless="${carForRepairs.get().isFixed}" th:text="#{carForRepair.isFixed} + ': ' + #{carForRepair.not.fixed}"></li>
     </div>
 
 </ul>
 <nav>
     <div>
         <a th:href = "@{/}">
-            <button type = "button" th:text = "#{cars.back.button}"></button>
+            <button type = "button" th:text = "#{carForRepairs.back.button}"></button>
         </a>
     </div>
 </nav>
