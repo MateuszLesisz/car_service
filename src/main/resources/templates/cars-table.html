@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text ="#{cars.title}"></title>
+    <title th:text ="#{carForRepairs.title}"></title>
     <link th:href="@{/css/table.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -14,28 +14,28 @@
     </div>
 </nav>
 
-<h1 th:text="#{cars.headline}"></h1>
+<h1 th:text="#{carForRepairs.headline}"></h1>
 
 <table>
     <tr>
-        <th th:text="#{car.id}"></th>
-        <th th:text="#{car.registrationNumber}"></th>
-        <th th:text="#{car.name}"></th>
-        <th th:text="#{car.color}"></th>
-        <th th:text="#{car.yearOfProduction}"></th>
-        <th th:text="#{car.date}"></th>
-        <th th:text="#{car.isFixed}"></th>
+        <th th:text="#{carForRepair.id}"></th>
+        <th th:text="#{carForRepair.registrationNumber}"></th>
+        <th th:text="#{carForRepair.name}"></th>
+        <th th:text="#{carForRepair.color}"></th>
+        <th th:text="#{carForRepair.yearOfProduction}"></th>
+        <th th:text="#{carForRepair.date}"></th>
+        <th th:text="#{carForRepair.isFixed}"></th>
     </tr>
-    <tr th:each="car, iterStat : ${car}" th:class="${iterStat.odd}? 'white-row'">
-        <td th:text="${car.id}"></td>
-        <td th:text="${car.registrationNumber}"></td>
-        <td th:text="${car.name}"></td>
-        <td th:text="${car.color}"></td>
-        <td th:text="${car.yearOfProduction}"></td>
-        <td th:text="${car.today}"></td>
+    <tr th:each="carForRepair, iterStat : ${carForRepair}" th:class="${iterStat.odd}? 'white-row'">
+        <td th:text="${carForRepair.id}"></td>
+        <td th:text="${carForRepair.registrationNumber}"></td>
+        <td th:text="${carForRepair.name}"></td>
+        <td th:text="${carForRepair.color}"></td>
+        <td th:text="${carForRepair.yearOfProduction}"></td>
+        <td th:text="${carForRepair.today}"></td>
         <td>
-            <a th:href="@{/car/{id}(id=${car.id})}">
-                <button type="button" th:text="#{car.fix}"></button>
+            <a th:href="@{/carForRepair/{id}(id=${carForRepair.id})}">
+                <button type="button" th:text="#{carForRepair.fix}"></button>
             </a>
         </td>
     </tr>
@@ -43,7 +43,7 @@
 <nav>
     <div>
         <a th:href = "@{/}">
-            <button type = "button" th:text = "#{cars.back.button}"></button>
+            <button type = "button" th:text = "#{carForRepairs.back.button}"></button>
         </a>
     </div>
 </nav>
