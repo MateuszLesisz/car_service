@@ -11,10 +11,10 @@ import java.time.LocalDate;
 @Entity
 @Data
 @Builder
-@Table(name = CarForRepair.TABLE_NAME)
+@Table(name = Car.TABLE_NAME)
 @NoArgsConstructor
 @AllArgsConstructor
-public class CarForRepair {
+public class Car {
 
     public static final String TABLE_NAME = "broken_cars";
     public static final String COLUMN_PREFIX = "c_";
@@ -42,7 +42,7 @@ public class CarForRepair {
     @Column(name = COLUMN_PREFIX + "is_fixed", nullable = false)
     private Boolean isFixed;
 
-    public CarForRepair(String registrationNumber, String name, Color color, Integer yearOfProduction, LocalDate today, Boolean isFixed) {
+    public Car(String registrationNumber, String name, Color color, Integer yearOfProduction, LocalDate today, Boolean isFixed) {
         this.registrationNumber = registrationNumber;
         this.name = name;
         this.color = color;
