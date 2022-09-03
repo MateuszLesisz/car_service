@@ -46,5 +46,6 @@ public class CarService {
                 .isFixed(false)
                 .build();
         carRepository.save(car);
+        saveToFile();
     }
 }
