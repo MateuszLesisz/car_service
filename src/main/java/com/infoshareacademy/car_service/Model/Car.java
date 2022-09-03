@@ -1,10 +1,7 @@
 package com.infoshareacademy.car_service.Model;
 
 import com.infoshareacademy.car_service.dto.Color;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -14,8 +11,11 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
+@Data
+@Builder
 @Table(name = Car.TABLE_NAME)
 @NoArgsConstructor
+@AllArgsConstructor
 public class Car {
 
     public static final String TABLE_NAME = "car";
