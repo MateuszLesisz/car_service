@@ -39,6 +39,12 @@ public class CarController {
         return "broken-cars-table";
     }
 
+    @GetMapping("fixed/cars/table")
+    public String getAllFixedCars(Model model) {
+        model.addAttribute("car", carService.getListOfBrokenCars(true));
+        return "fixed-cars-table";
+    }
+
     @GetMapping("/cars/new")
     public String getCarForm(Model model) {
         model.addAttribute("car", new CarDto());

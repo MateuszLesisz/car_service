@@ -6,10 +6,17 @@
 </head>
 <body>
 
-<h1 th:text="#{welcome-page.all.cars}"></h1>
+
 <nav>
     <div>
+        <h1 th:text="#{welcome-page.all.cars}"></h1>
         <a th:href = "@{broken/cars/table}">
+            <button type = "button" th:text = "#{welcome-page.button.submit}"></button>
+        </a>
+    </div>
+    <div>
+        <h1 th:text="#{welcome-page.fixed.cars}"></h1>
+        <a th:href = "@{fixed/cars/table}">
             <button type = "button" th:text = "#{welcome-page.button.submit}"></button>
         </a>
     </div>

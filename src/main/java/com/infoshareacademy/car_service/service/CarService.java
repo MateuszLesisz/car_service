@@ -53,4 +53,8 @@ public class CarService {
     public List<Car> getListOfBrokenCars(Boolean isFixed) {
         return carRepository.findCarsByIsFixed(isFixed);
     }
+
+    public List<Car> getListOfFixedCars(Boolean isFixed) {
+        return carRepository.findCarsByIsFixed(isFixed);
+    }
 }
