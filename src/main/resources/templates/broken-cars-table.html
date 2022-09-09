@@ -34,7 +34,7 @@
         <td th:text="${car.yearOfProduction}"></td>
         <td th:text="${car.today}"></td>
         <td>
-            <a th:href="@{/car/{id}(id=${car.id})}">
+            <a th:href="@{/broken/car/{id}(id=${car.id})}">
                 <button type="button" th:text="#{car.fix}"></button>
             </a>
         </td>

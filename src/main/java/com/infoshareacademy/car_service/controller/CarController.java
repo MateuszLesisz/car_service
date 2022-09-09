@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
-import java.util.UUID;
 
 @Controller
 @AllArgsConstructor
@@ -27,16 +26,16 @@ public class CarController {
         return "welcome-page";
     }
 
-    @GetMapping("car/{id}")
-    public String getCars(@PathVariable Long id, Model model) {
+    @GetMapping("broken/car/{id}")
+    public String getBrokenCar(@PathVariable Long id, Model model) {
         model.addAttribute("cars", carRepository.findById(id));
-        return "car";
+        return "broken-car";
     }
 
-    @GetMapping("/cars/table")
-    public String getAllCars(Model model) {
+    @GetMapping("broken/cars/table")
+    public String getAllBrokenCars(Model model) {
         model.addAttribute("car", carRepository.findAll());
-        return "cars-table";
+        return "broken-cars-table";
     }
 
     @GetMapping("/cars/new")
