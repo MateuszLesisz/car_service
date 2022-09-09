@@ -1,5 +1,6 @@
 package com.infoshareacademy.car_service.controller;
 
+import com.infoshareacademy.car_service.Model.Car;
 import com.infoshareacademy.car_service.dto.CarDto;
 import com.infoshareacademy.car_service.repository.CarRepository;
 import com.infoshareacademy.car_service.service.CarService;
@@ -34,7 +35,7 @@ public class CarController {
 
     @GetMapping("broken/cars/table")
     public String getAllBrokenCars(Model model) {
-        model.addAttribute("car", carRepository.findAll());
+        model.addAttribute("car", carService.getListOfBrokenCars(false));
         return "broken-cars-table";
     }
 

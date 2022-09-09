@@ -25,7 +25,7 @@
     <div th:switch="${cars.get().isFixed}">
         <li th:if="${cars.get().isFixed}" th:text="#{car.isFixed} + ': ' + #{car.fixed}"></li>
         <li th:unless="${cars.get().isFixed}" th:text="#{car.isFixed} + ': ' + #{car.not.fixed}"></li>
-        <a th:href="@{broken/car/{id}}">
+        <a th:href="@{/broken/car/{id}}">
             <button type="button" th:text="#{car.fix}"></button>
         </a>
     </div>

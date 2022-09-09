@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.time.LocalDate;
 import java.util.Collection;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -47,5 +48,9 @@ public class CarService {
                 .build();
         carRepository.save(car);
         saveToFile();
+    }
+
+    public List<Car> getListOfBrokenCars(Boolean isFixed) {
+        return carRepository.findCarsByIsFixed(isFixed);
     }
 }
