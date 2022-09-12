@@ -33,6 +33,12 @@ public class CarController {
         return "broken-car";
     }
 
+    @GetMapping("fixed/car/{id}")
+    public String getFixedCar(@PathVariable Long id, Model model) {
+        model.addAttribute("car", carRepository.findById(id));
+        return "fixed-car";
+    }
+
     @GetMapping("broken/cars/table")
     public String getAllBrokenCars(Model model) {
         model.addAttribute("car", carService.getListOfBrokenCars(false));
@@ -41,7 +47,7 @@ public class CarController {
 
     @GetMapping("fixed/cars/table")
     public String getAllFixedCars(Model model) {
-        model.addAttribute("car", carService.getListOfBrokenCars(true));
+        model.addAttribute("car", carService.getListOfFixedCars(true));
         return "fixed-cars-table";
     }
 
@@ -57,7 +63,7 @@ public class CarController {
         if (bindingResult.hasErrors()) {
             return "addForm";
         }
-        carService.create(carDto);
+        carService.createCar(carDto);
         return "addForm-success";
     }
 }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text ="#{cars.title}"></title>
+</head>
+<body>
+
+<h1 th:text="#{fixed.car.headline}"></h1>
+
+<ul>
+    <li th:text="#{car.id} + ': ' + ${car.get().id}"></li>
+    <li th:text="#{car.registrationNumber} + ': ' + ${car.get().registrationNumber}"></li>
+    <li th:text="#{car.name} + ': ' + ${car.get().name}"></li>
+    <li th:text="#{car.color} + ': ' + ${car.get().color}"></li>
+    <li th:text="#{car.yearOfProduction} + ': ' + ${car.get().yearOfProduction}"></li>
+    <li th:text="#{car.date} + ': ' + ${car.get().today}"></li>
+    <div th:switch="${car.get().isFixed}">
+        <li th:if="${car.get().isFixed}" th:text="#{car.isFixed} + ': ' + #{car.fixed}"></li>
+        <li th:unless="${car.get().isFixed}" th:text="#{car.isFixed} + ': ' + #{car.not.fixed}"></li>
+    </div>
+</ul>
+
+<nav>
+    <div>
+        <a th:href = "@{/}">
+            <button type = "button" th:text = "#{cars.back.button}"></button>
+        </a>
+    </div>
+</nav>
+</body>
+</html>

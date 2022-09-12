@@ -15,6 +15,7 @@ import java.io.Writer;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -37,7 +38,7 @@ public class CarService {
         }
     }
 
-    public void create(CarDto carDto) {
+    public Car createCar(CarDto carDto) {
         Car car = Car.builder()
                 .registrationNumber(carDto.getRegistrationNumber())
                 .name(carDto.getName())
@@ -46,8 +47,8 @@ public class CarService {
                 .today(LocalDate.now())
                 .isFixed(false)
                 .build();
-        carRepository.save(car);
         saveToFile();
+        return carRepository.save(car);
     }
 
     public List<Car> getListOfBrokenCars(Boolean isFixed) {
