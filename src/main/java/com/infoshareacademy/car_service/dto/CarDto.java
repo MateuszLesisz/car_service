@@ -6,7 +6,6 @@ import lombok.Setter;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.util.UUID;
 
 
 @Getter
@@ -14,13 +13,12 @@ import java.util.UUID;
 public class CarDto {
 
     private Long id;
-    @NotBlank
+    @NotBlank(message = "Registration number field cannot be empty")
     private String registrationNumber;
-    @NotBlank
+    @NotBlank(message = "name field cannot be empty")
     private String name;
-    @NotNull
     private Color color;
-    @NotNull
+    @NotNull(message = "year of production field cannot be empty")
     private Integer yearOfProduction;
     private LocalDate today;
     private Boolean isFixed;
