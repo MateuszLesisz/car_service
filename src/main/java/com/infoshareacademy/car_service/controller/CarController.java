@@ -6,12 +6,10 @@ import com.infoshareacademy.car_service.repository.CarRepository;
 import com.infoshareacademy.car_service.service.CarService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -57,7 +55,7 @@ public class CarController {
         return "addForm";
     }
 
-    @PostMapping(value = "/cars/new")
+    @PostMapping("/cars/new")
     public String sendCar(@Valid @ModelAttribute("car") CarDto carDto,
                           BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
@@ -65,5 +63,15 @@ public class CarController {
         }
         carService.createCar(carDto);
         return "addForm-success";
+    }
+    @Transactional
+    @PatchMapping("car/{id}")
+    public String toggleCar(@PathVariable Long id) {
+        if(!carRepository.existsById(id)) {
+            return "broken-car";
+        }
+        carRepository.findById(id)
+                .ifPresent(car -> car.setIsFixed(false));
+        return "fixed-car";
     }
 }

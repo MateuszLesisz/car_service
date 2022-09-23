@@ -7,7 +7,6 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Getter
-@Setter
 @Entity
 @Data
 @Builder
@@ -49,5 +48,33 @@ public class Car {
         this.yearOfProduction = yearOfProduction;
         this.today = today;
         this.isFixed = isFixed;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public void setYearOfProduction(Integer yearOfProduction) {
+        this.yearOfProduction = yearOfProduction;
+    }
+
+    public void setToday(LocalDate today) {
+        this.today = today;
+    }
+
+    public void setFixed(Boolean fixed) {
+        isFixed = fixed;
     }
 }
