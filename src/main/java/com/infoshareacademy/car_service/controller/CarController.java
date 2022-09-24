@@ -72,7 +72,7 @@ public class CarController {
             return "broken-car";
         }
         carRepository.findById(id)
-                .ifPresent(car -> car.setIsFixed(false));
+                .ifPresent(car -> car.setIsFixed(true));
         return "fixed-car";
     }
 }
