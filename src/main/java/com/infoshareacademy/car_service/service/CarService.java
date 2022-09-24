@@ -47,7 +47,6 @@ public class CarService {
                 .today(LocalDate.now())
                 .isFixed(false)
                 .build();
-        saveToFile();
         return carRepository.save(car);
     }
 

@@ -62,6 +62,7 @@ public class CarController {
             return "addForm";
         }
         carService.createCar(carDto);
+        carService.saveToFile();
         return "addForm-success";
     }
     @Transactional
