@@ -32,7 +32,8 @@ public class CarController {
     }
 
     @GetMapping("fixed/car/{id}")
-    public String getFixedCar(@PathVariable Long id, Model model) {
+    public String getFixedCar(@PathVariable Long id, Model model, Car car) {
+        carService.changeIsFixedToTrue(car, id);
         model.addAttribute("car", carRepository.findById(id));
         return "fixed-car";
     }

@@ -57,4 +57,9 @@ public class CarService {
     public List<Car> getListOfFixedCars(Boolean isFixed) {
         return carRepository.findCarsByIsFixed(isFixed);
     }
+
+    public Car changeIsFixedToTrue(Car car, Long id) {
+        car.setIsFixed(true);
+        return carRepository.save(car);
+    }
 }
