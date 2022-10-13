@@ -16,8 +16,8 @@
 
 <h1 th:text="#{cars.headline}"></h1>
 <div>
-    <form th:object="${car}" th:action="@{/search/broken/car}" method="get">
-        <label th:text="#{search.car}"></label>
+    <form th:object="${car}" th:action="@{search/broken/car}" method="post">
+        <label th:for="registrationNumber_input_id" th:text="#{car.registrationNumber}"></label>
         <input type="text" id="registrationNumber_input_id" th:field="*{registrationNumber}">
         <br>
     </form>

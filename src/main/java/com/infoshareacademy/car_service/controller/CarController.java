@@ -65,10 +65,11 @@ public class CarController {
         carService.saveToFile();
         return "addForm-success";
     }
+
     @Transactional
     @PatchMapping("car/{id}")
     public String toggleCar(@PathVariable Long id) {
-        if(!carRepository.existsById(id)) {
+        if (!carRepository.existsById(id)) {
             return "broken-car";
         }
         carRepository.findById(id)
@@ -77,8 +78,8 @@ public class CarController {
     }
 
     @PostMapping("search/broken/car")
-    public String searchBrokenCar(Model model, String registrationNumber) {
-        model.addAttribute("car", carService.getCarByRegistrationNumber(registrationNumber));
+    public String searchBrokenCar(@Valid @ModelAttribute("car") CarDto carDto) {
+        carService.getCarByRegistrationNumber(carDto.getRegistrationNumber());
         return "broken-cars-table";
     }
 }
