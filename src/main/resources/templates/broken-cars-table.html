@@ -15,7 +15,13 @@
 </nav>
 
 <h1 th:text="#{cars.headline}"></h1>
-
+<div>
+    <form th:object="${car}" th:action="@{/search/broken/car}" method="get">
+        <label th:text="#{search.car}"></label>
+        <input type="text" id="registrationNumber_input_id" th:field="*{registrationNumber}">
+        <br>
+    </form>
+</div>
 <table>
     <tr>
         <th th:text="#{car.id}"></th>

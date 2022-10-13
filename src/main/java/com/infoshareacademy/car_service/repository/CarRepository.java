@@ -11,6 +11,6 @@ public interface CarRepository extends JpaRepository<Car, Long> {
 
     List<Car> findCarsByIsFixed(Boolean isFixed);
 
-    Car findByRegistrationNumber(String registrationNumber);
+    Car findCarByRegistrationNumber(String registrationNumber);
 
 }

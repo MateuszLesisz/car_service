@@ -63,4 +63,8 @@ public class CarService {
         car.setIsFixed(true);
         return carRepository.save(car);
     }
+
+    public Car getCarByRegistrationNumber(String registrationNumber) {
+        return carRepository.findCarByRegistrationNumber(registrationNumber);
+    }
 }

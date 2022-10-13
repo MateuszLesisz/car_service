@@ -75,4 +75,10 @@ public class CarController {
                 .ifPresent(car -> car.setIsFixed(true));
         return "fixed-car";
     }
+
+    @PostMapping("search/broken/car")
+    public String searchBrokenCar(Model model, String registrationNumber) {
+        model.addAttribute("car", carService.getCarByRegistrationNumber(registrationNumber));
+        return "broken-cars-table";
+    }
 }

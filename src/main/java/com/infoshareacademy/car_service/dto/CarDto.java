@@ -1,5 +1,6 @@
 package com.infoshareacademy.car_service.dto;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,8 +9,7 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 
-@Getter
-@Setter
+@Data
 public class CarDto {
 
     private Long id;
