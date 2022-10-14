@@ -81,7 +81,7 @@ public class CarController {
     @GetMapping("search/broken/car")
     public String searchBrokenCar(Model model,String keyword) {
         List<Car> cars = carService.getCarByRegistrationNumber(keyword);
-        model.addAttribute("cars", cars);
+        model.addAttribute("car", cars);
         return "broken-cars-table";
     }
 }
