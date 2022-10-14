@@ -13,7 +13,7 @@ public interface CarRepository extends JpaRepository<Car, Long> {
 
     List<Car> findCarsByIsFixed(Boolean isFixed);
 
-    @Query(value = "SELECT * FROM car c WHERE c.registration_Number LIKE %:keyword%", nativeQuery = true)
-    List<Car> findCarByRegistrationNumber(@Param("keyword") String registrationNumber);
+    @Query(value = "SELECT * FROM car c WHERE c_registration_number LIKE %:keyword%", nativeQuery = true)
+    List<Car> findCarByRegistrationNumber(@Param("keyword") String keyword);
 
 }
