@@ -17,7 +17,7 @@
 <h1 th:text="#{cars.headline}"></h1>
 <div>
     <form th:action="@{/search/broken/car}" method="get">
-        <input type="text" name="keyword" th:value="${keyword}">
+        <input type="text" name="keyword" th:value="${keyword}" placeholder = "Find by Registration Number" size="50">
         <input type="submit" value="search">
     </form>
 </div>
@@ -31,7 +31,7 @@
         <th th:text="#{car.date}"></th>
         <th th:text="#{car.isFixed}"></th>
     </tr>
-    <tr th:each="car, iterStat : ${car}" th:class="${iterStat.odd}? 'white-row'">
+    <tr th:each="car : ${car}" th:field="${car}">
         <td th:text="${car.id}"></td>
         <td th:text="${car.registrationNumber}"></td>
         <td th:text="${car.name}"></td>
