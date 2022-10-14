@@ -64,7 +64,7 @@ public class CarService {
         return carRepository.save(car);
     }
 
-    public Car getCarByRegistrationNumber(String registrationNumber) {
+    public List<Car> getCarByRegistrationNumber(String registrationNumber) {
         return carRepository.findCarByRegistrationNumber(registrationNumber);
     }
 }

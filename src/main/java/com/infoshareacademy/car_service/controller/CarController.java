@@ -78,7 +78,7 @@ public class CarController {
     }
 
     @GetMapping("search/broken/car")
-    public String searchBrokenCar(@RequestParam(value = "search", required = false) String registrationNumber, Model model) {
+    public String searchBrokenCar(String registrationNumber, Model model) {
         model.addAttribute("search", carService.getCarByRegistrationNumber(registrationNumber));
         return "broken-cars-table";
     }
