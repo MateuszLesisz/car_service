@@ -77,9 +77,9 @@ public class CarController {
         return "fixed-car";
     }
 
-    @PostMapping("search/broken/car")
-    public String searchBrokenCar(@Valid @ModelAttribute("car") CarDto carDto) {
-        carService.getCarByRegistrationNumber(carDto.getRegistrationNumber());
+    @GetMapping("search/broken/car")
+    public String searchBrokenCar(@RequestParam(value = "search", required = false) String registrationNumber, Model model) {
+        model.addAttribute("search", carService.getCarByRegistrationNumber(registrationNumber));
         return "broken-cars-table";
     }
 }
