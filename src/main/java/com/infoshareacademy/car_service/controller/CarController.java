@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @AllArgsConstructor
@@ -78,8 +79,9 @@ public class CarController {
     }
 
     @GetMapping("search/broken/car")
-    public String searchBrokenCar(String registrationNumber, Model model) {
-        model.addAttribute("search", carService.getCarByRegistrationNumber(registrationNumber));
+    public String searchBrokenCar(Car car, String registrationNumber, Model model) {
+        List<Car> cars = carService.getCarByRegistrationNumber(registrationNumber);
+        model.addAttribute("cars", cars);
         return "broken-cars-table";
     }
 }
