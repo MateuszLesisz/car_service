@@ -17,7 +17,7 @@
 <h1 th:text="#{cars.headline}"></h1>
 <div>
     <form th:action="@{/search/broken/car}" method="get">
-        <input type="text" name="registrationNumber" id="search" th:value="${registrationNumber}">
+        <input type="text" name="keyword" th:value="${keyword}">
         <input type="submit" value="search">
     </form>
 </div>
