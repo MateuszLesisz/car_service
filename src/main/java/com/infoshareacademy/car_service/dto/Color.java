@@ -14,6 +14,7 @@ public enum Color {
     ;
 
     private final String value;
+
     Color(String value) {
         this.value = value;
     }

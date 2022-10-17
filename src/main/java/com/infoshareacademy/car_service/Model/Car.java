@@ -1,7 +1,10 @@
 package com.infoshareacademy.car_service.Model;
 
 import com.infoshareacademy.car_service.dto.Color;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -9,12 +12,12 @@ import java.time.LocalDate;
 @Entity
 @Data
 @Builder
-@Table(name = BrokenCar.TABLE_NAME)
+@Table(name = Car.TABLE_NAME)
 @NoArgsConstructor
 @AllArgsConstructor
-public class BrokenCar {
+public class Car {
 
-    public static final String TABLE_NAME = "broken_car";
+    public static final String TABLE_NAME = "car";
 
     @Id
     @Column(name = "id")
@@ -39,7 +42,7 @@ public class BrokenCar {
     @Column(name = "fixed", nullable = false)
     private Boolean isFixed;
 
-    public BrokenCar(String registrationNumber, String name, Color color, Integer yearOfProduction, LocalDate today, Boolean isFixed) {
+    public Car(String registrationNumber, String name, Color color, Integer yearOfProduction, LocalDate today, Boolean isFixed) {
         this.registrationNumber = registrationNumber;
         this.name = name;
         this.color = color;
