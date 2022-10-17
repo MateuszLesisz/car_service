@@ -1,6 +1,6 @@
 package com.infoshareacademy.car_service.controller;
 
-import com.infoshareacademy.car_service.Model.Car;
+import com.infoshareacademy.car_service.Model.BrokenCar;
 import com.infoshareacademy.car_service.dto.CarDto;
 import com.infoshareacademy.car_service.repository.CarRepository;
 import com.infoshareacademy.car_service.service.CarService;
@@ -74,14 +74,14 @@ public class CarController {
             return "broken-car";
         }
         carRepository.findById(id)
-                .ifPresent(car -> car.setIsFixed(true));
+                .ifPresent(brokenCar -> brokenCar.setIsFixed(true));
         return "fixed-car";
     }
 
     @GetMapping("search/broken/car")
     public String searchBrokenCar(Model model,String keyword) {
-        List<Car> cars = carService.getCarByRegistrationNumber(keyword);
-        model.addAttribute("car", cars);
+        List<BrokenCar> brokenCars = carService.getCarByRegistrationNumber(keyword);
+        model.addAttribute("car", brokenCars);
         return "broken-cars-table";
     }
 }
