@@ -15,29 +15,28 @@ import java.time.LocalDate;
 public class BrokenCar {
 
     public static final String TABLE_NAME = "broken_car";
-    public static final String COLUMN_PREFIX = "bc_";
 
     @Id
-    @Column(name = COLUMN_PREFIX + "id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = COLUMN_PREFIX + "registration_number", nullable = false)
+    @Column(name = "registration_number", nullable = false)
     private String registrationNumber;
 
-    @Column(name = COLUMN_PREFIX + "name", nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = COLUMN_PREFIX + "color", nullable = false)
+    @Column(name = "color", nullable = false)
     private Color color;
 
-    @Column(name = COLUMN_PREFIX + "year_of_production", nullable = false)
+    @Column(name = "year_of_production", nullable = false)
     private Integer yearOfProduction;
 
-    @Column(name = COLUMN_PREFIX + "today", nullable = false)
+    @Column(name = "today", nullable = false)
     private LocalDate today;
 
-    @Column(name = COLUMN_PREFIX + "is_fixed", nullable = false)
+    @Column(name = "fixed", nullable = false)
     private Boolean isFixed;
 
     public BrokenCar(String registrationNumber, String name, Color color, Integer yearOfProduction, LocalDate today, Boolean isFixed) {

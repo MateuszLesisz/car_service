@@ -21,15 +21,14 @@ public class FixedCar {
     public static final String COLUMN_PREFIX = "fc_";
 
     @Id
-    @Column(name = COLUMN_PREFIX + "Id", nullable = false)
+    @Column(name = "Id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long fixedId;
 
-    @Column(name = COLUMN_PREFIX + "brokenId", nullable = false)
     @OneToOne
     @JoinColumn(name = "bc_id")
     private BrokenCar brokenId;
 
-    @Column(name = COLUMN_PREFIX + "isFixed", nullable = false)
+    @Column(name = "fixed", nullable = false)
     private boolean isFixed;
 }

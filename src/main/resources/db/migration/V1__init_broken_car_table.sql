@@ -6,5 +6,5 @@ name varchar(100) not null,
 color varchar(100) not null,
 yearOfProduction int not null,
 today date not null,
-isFixed bit not null
+fixed bit not null
 );
