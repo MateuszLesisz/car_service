@@ -1,9 +1,9 @@
 package com.infoshareacademy.car_service.controller;
 
 import com.infoshareacademy.car_service.Model.BrokenCar;
-import com.infoshareacademy.car_service.dto.CarDto;
-import com.infoshareacademy.car_service.repository.CarRepository;
-import com.infoshareacademy.car_service.service.CarService;
+import com.infoshareacademy.car_service.dto.BrokenCarDto;
+import com.infoshareacademy.car_service.repository.BrokenCarRepository;
+import com.infoshareacademy.car_service.service.BrokenCarService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,10 +16,10 @@ import java.util.List;
 
 @Controller
 @AllArgsConstructor
-public class CarController {
+public class BrokenCarController {
 
-    private final CarService carService;
-    private final CarRepository carRepository;
+    private final BrokenCarService brokenCarService;
+    private final BrokenCarRepository brokenCarRepository;
 
     @GetMapping
     public String welcomePage() {
@@ -28,59 +28,60 @@ public class CarController {
 
     @GetMapping("broken/car/{id}")
     public String getBrokenCar(@PathVariable Long id, Model model) {
-        model.addAttribute("cars", carRepository.findById(id));
+        model.addAttribute("cars", brokenCarRepository.findById(id));
         return "broken-car";
     }
 
     @GetMapping("fixed/car/{id}")
     public String getFixedCar(@PathVariable Long id, Model model) {
-        model.addAttribute("car", carService.changeIsFixedToTrue(id));
+        model.addAttribute("car", brokenCarService.changeIsFixedToTrue(id));
+        brokenCarService.deleteFromBrokenCars(id);
         return "fixed-car";
     }
 
     @GetMapping("broken/cars/table")
     public String getAllBrokenCars(Model model) {
-        model.addAttribute("car", carService.getListOfBrokenCars(false));
+        model.addAttribute("car", brokenCarService.getListOfBrokenCars(false));
         return "broken-cars-table";
     }
 
     @GetMapping("fixed/cars/table")
     public String getAllFixedCars(Model model) {
-        model.addAttribute("car", carService.getListOfFixedCars(true));
+        model.addAttribute("car", brokenCarService.getListOfFixedCars(true));
         return "fixed-cars-table";
     }
 
     @GetMapping("/cars/new")
     public String getCarForm(Model model) {
-        model.addAttribute("car", new CarDto());
+        model.addAttribute("car", new BrokenCarDto());
         return "addForm";
     }
 
     @PostMapping("/cars/new")
-    public String sendCar(@Valid @ModelAttribute("car") CarDto carDto,
+    public String sendCar(@Valid @ModelAttribute("car") BrokenCarDto brokenCarDto,
                           BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "addForm";
         }
-        carService.createCar(carDto);
-        carService.saveToFile();
+        brokenCarService.createBrokenCar(brokenCarDto);
+        brokenCarService.saveToFile();
         return "addForm-success";
     }
 
     @Transactional
     @PatchMapping("car/{id}")
     public String toggleCar(@PathVariable Long id) {
-        if (!carRepository.existsById(id)) {
+        if (!brokenCarRepository.existsById(id)) {
             return "broken-car";
         }
-        carRepository.findById(id)
+        brokenCarRepository.findById(id)
                 .ifPresent(brokenCar -> brokenCar.setIsFixed(true));
         return "fixed-car";
     }
 
     @GetMapping("search/broken/car")
     public String searchBrokenCar(Model model,String keyword) {
-        List<BrokenCar> brokenCars = carService.getCarByRegistrationNumber(keyword);
+        List<BrokenCar> brokenCars = brokenCarService.getCarByRegistrationNumber(keyword);
         model.addAttribute("car", brokenCars);
         return "broken-cars-table";
     }

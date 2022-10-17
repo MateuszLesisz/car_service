@@ -23,7 +23,7 @@ public class FixedCar {
     @Id
     @Column(name = "Id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long fixedId;
+    private Long id;
 
     @OneToOne
     @JoinColumn(name = "bc_id")

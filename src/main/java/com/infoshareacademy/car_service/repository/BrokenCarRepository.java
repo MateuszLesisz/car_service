@@ -9,11 +9,11 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface CarRepository extends JpaRepository<BrokenCar, Long> {
+public interface BrokenCarRepository extends JpaRepository<BrokenCar, Long> {
 
     List<BrokenCar> findCarsByIsFixed(Boolean isFixed);
 
-    @Query(value = "SELECT * FROM broken_car c WHERE bc_registration_number LIKE %:keyword%", nativeQuery = true)
+    @Query(value = "SELECT * FROM broken_car c WHERE registration_number LIKE %:keyword%", nativeQuery = true)
     List<BrokenCar> findCarByRegistrationNumber(@Param("keyword") String keyword);
 
 }

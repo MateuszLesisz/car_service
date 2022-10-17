@@ -1,8 +1,6 @@
 package com.infoshareacademy.car_service.dto;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -10,7 +8,7 @@ import java.time.LocalDate;
 
 
 @Data
-public class CarDto {
+public class BrokenCarDto {
 
     private Long id;
     @NotBlank(message = "Registration number field cannot be empty")
