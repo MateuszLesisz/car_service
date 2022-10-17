@@ -64,7 +64,7 @@ public class CarService {
         return carRepository.save(car);
     }
 
-    public List<Car> getCarByRegistrationNumber(String registrationNumber) {
-        return carRepository.findCarByRegistrationNumber(registrationNumber);
+    public List<Car> getCarByRegistrationNumberAndIsFixed(String registrationNumber, boolean isFixed) {
+        return carRepository.findCarByRegistrationNumberAndIsFixed(registrationNumber, isFixed);
     }
 }
