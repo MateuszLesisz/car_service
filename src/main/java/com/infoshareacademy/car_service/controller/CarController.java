@@ -42,13 +42,13 @@ public class CarController {
 
     @GetMapping("broken/cars/table")
     public String getAllBrokenCars(Model model) {
-        model.addAttribute("car", carService.getListOfBrokenCars(false));
+        model.addAttribute("car", carService.getListOfBrokenCars());
         return "broken-cars-table";
     }
 
     @GetMapping("fixed/cars/table")
     public String getAllFixedCars(Model model) {
-        model.addAttribute("car", carService.getListOfFixedCars(true));
+        model.addAttribute("car", carService.getListOfFixedCars());
         return "fixed-cars-table";
     }
 

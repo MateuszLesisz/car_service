@@ -21,7 +21,7 @@ import java.util.List;
 public class CarService {
 
     private final CarRepository carRepository;
-    private static final String BROKEN_CAR_REPOSITORY_JSON_FILE = "src/main/resources/brokenCar.json";
+    private static final String BROKEN_CAR_REPOSITORY_JSON_FILE = "src/main/resources/brokenCars.json";
 
     private static final String FIXED_CAR_REPOSITORY_JSON_FILE = "src/main/resources/fixed_cars/" + LocalDate.now() + " " + "fixedCars.json";
     private final Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new GsonLocalDate()).setPrettyPrinting().create();
@@ -62,12 +62,12 @@ public class CarService {
         return carRepository.save(car);
     }
 
-    public List<Car> getListOfBrokenCars(Boolean isFixed) {
-        return carRepository.findCarsByIsFixed(isFixed);
+    public List<Car> getListOfBrokenCars() {
+        return carRepository.findCarsByIsFixed(false);
     }
 
-    public List<Car> getListOfFixedCars(Boolean isFixed) {
-        return carRepository.findCarsByIsFixed(isFixed);
+    public List<Car> getListOfFixedCars() {
+        return carRepository.findCarsByIsFixed(true);
     }
 
     public Car changeIsFixedToTrue(Long id) {
