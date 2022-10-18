@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.infoshareacademy.car_service.Model.Car;
 import com.infoshareacademy.car_service.dto.CarDto;
 import com.infoshareacademy.car_service.repository.CarRepository;
-import com.infoshareacademy.car_service.utils.GsonLocalDateTime;
+import com.infoshareacademy.car_service.utils.GsonLocalDate;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +18,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -27,8 +26,8 @@ public class CarService {
     private final CarRepository carRepository;
     private static final String BROKEN_CAR_REPOSITORY_JSON_FILE = "src/main/resources/brokenCars.json";
 
-    private static final String FIXED_CAR_REPOSITORY_JSON_FILE = "src/main/resources/fixed_cars/" + LocalDate.now() + " " + "/fixedCars.json";
-    private final Gson gson = new GsonBuilder().registerTypeAdapter(LocalDateTime.class, new GsonLocalDateTime()).setPrettyPrinting().create();
+    private static final String FIXED_CAR_REPOSITORY_JSON_FILE = "src/main/resources/fixed_cars/" + LocalDate.now() + " fixedCars.json";
+    private final Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new GsonLocalDate()).setPrettyPrinting().create();
 
     public void saveToFileBrokenCars() {
         Collection<Car> cars = carRepository.findCarsByIsFixed(false);
@@ -54,17 +53,17 @@ public class CarService {
         }
     }
 
-    public Car createCar(CarDto carDto) {
+    public void createCar(CarDto carDto) {
         Car car = Car.builder()
                 .registrationNumber(carDto.getRegistrationNumber())
                 .name(carDto.getName())
                 .color(carDto.getColor())
                 .yearOfProduction(carDto.getYearOfProduction())
-                .dateOfAddCar(LocalDateTime.now())
+                .dateOfAddCar(LocalDate.now())
                 .isFixed(false)
-                .fixedDate(null)
+                .fixedDate(carDto.getFixedDate())
                 .build();
-        return carRepository.save(car);
+        carRepository.save(car);
     }
 
     public List<Car> getListOfBrokenCars() {
@@ -80,7 +79,7 @@ public class CarService {
     public Car changeIsFixedToTrue(Long id) {
         Car car = carRepository.findById(id).orElseThrow();
         car.setIsFixed(true);
-        car.setFixedDate(LocalDateTime.now());
+        car.setFixedDate(LocalDate.now());
         return carRepository.save(car);
     }
 

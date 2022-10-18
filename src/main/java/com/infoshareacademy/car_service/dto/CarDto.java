@@ -5,7 +5,6 @@ import lombok.Data;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 
 @Data
@@ -19,7 +18,7 @@ public class CarDto {
     private Color color;
     @NotNull(message = "year of production field cannot be empty")
     private Integer yearOfProduction;
-    private LocalDateTime dateOfAddCar;
+    private LocalDate dateOfAddCar;
     private Boolean isFixed;
-    private LocalDateTime fixedDate;
+    private LocalDate fixedDate;
 }
