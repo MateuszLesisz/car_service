@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -36,18 +37,23 @@ public class Car {
     @Column(name = "year_of_production", nullable = false)
     private Integer yearOfProduction;
 
-    @Column(name = "today", nullable = false)
-    private LocalDate today;
+    @Column(name = "dateOfAddCar", nullable = false)
+    private LocalDateTime dateOfAddCar;
 
     @Column(name = "fixed", nullable = false)
     private Boolean isFixed;
 
-    public Car(String registrationNumber, String name, Color color, Integer yearOfProduction, LocalDate today, Boolean isFixed) {
+    @Column(name = "fixedDate")
+    private LocalDateTime fixedDate;
+
+    public Car(String registrationNumber, String name, Color color, Integer yearOfProduction, LocalDateTime dateOfAddCar, Boolean isFixed, LocalDateTime fixedDate) {
         this.registrationNumber = registrationNumber;
         this.name = name;
         this.color = color;
         this.yearOfProduction = yearOfProduction;
-        this.today = today;
+        this.dateOfAddCar = dateOfAddCar;
         this.isFixed = isFixed;
+        this.fixedDate = fixedDate;
+
     }
 }

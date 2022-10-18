@@ -21,7 +21,7 @@
     <li th:text="#{car.name} + ': ' + ${cars.get().name}"></li>
     <li th:text="#{car.color} + ': ' + ${cars.get().color}"></li>
     <li th:text="#{car.yearOfProduction} + ': ' + ${cars.get().yearOfProduction}"></li>
-    <li th:text="#{car.date} + ': ' + ${cars.get().today}"></li>
+    <li th:text="#{car.date} + ': ' + ${cars.get().dateOfAddCar}"></li>
     <div th:switch="${cars.get().isFixed}">
         <li th:if="${cars.get().isFixed}" th:text="#{car.isFixed} + ': ' + #{car.fixed}"></li>
         <li th:unless="${cars.get().isFixed}" th:text="#{car.isFixed} + ': ' + #{car.not.fixed}"></li>
