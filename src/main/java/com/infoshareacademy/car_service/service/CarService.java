@@ -21,14 +21,27 @@ import java.util.List;
 public class CarService {
 
     private final CarRepository carRepository;
+    private static final String BROKEN_CAR_REPOSITORY_JSON_FILE = "src/main/resources/brokenCar.json";
 
-    private static final String CAR_REPOSITORY_JSON_FILE = "src/main/resources/carsForRepair.json";
+    private static final String FIXED_CAR_REPOSITORY_JSON_FILE = "src/main/resources/fixed_cars/fixedCars.json";
     private final Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new GsonLocalDate()).setPrettyPrinting().create();
 
-    public void saveToFile() {
-        Collection<Car> cars = carRepository.findAll();
+    public void saveToFileBrokenCars() {
+        Collection<Car> cars = carRepository.findCarsByIsFixed(false);
         try {
-            Writer writer = new FileWriter(CAR_REPOSITORY_JSON_FILE);
+            Writer writer = new FileWriter(BROKEN_CAR_REPOSITORY_JSON_FILE);
+            gson.toJson(cars, writer);
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void saveToFileFixedCars() {
+        Collection<Car> cars = carRepository.findCarsByIsFixed(true);
+        try {
+            Writer writer = new FileWriter(FIXED_CAR_REPOSITORY_JSON_FILE);
             gson.toJson(cars, writer);
             writer.flush();
             writer.close();

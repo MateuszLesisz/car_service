@@ -35,6 +35,8 @@ public class CarController {
     @GetMapping("fixed/car/{id}")
     public String getFixedCar(@PathVariable Long id, Model model) {
         model.addAttribute("car", carService.changeIsFixedToTrue(id));
+        carService.saveToFileFixedCars();
+        carService.saveToFileBrokenCars();
         return "fixed-car";
     }
 
@@ -63,7 +65,7 @@ public class CarController {
             return "addForm";
         }
         carService.createCar(carDto);
-        carService.saveToFile();
+        carService.saveToFileBrokenCars();
         return "addForm-success";
     }
 
