@@ -1,18 +1,17 @@
 package com.infoshareacademy.car_service.controller;
 
-import com.infoshareacademy.car_service.Model.Car;
 import com.infoshareacademy.car_service.dto.CarDto;
 import com.infoshareacademy.car_service.repository.CarRepository;
 import com.infoshareacademy.car_service.service.CarService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @Controller
 @AllArgsConstructor
@@ -24,32 +23,6 @@ public class CarController {
     @GetMapping
     public String welcomePage() {
         return "welcome-page";
-    }
-
-    @GetMapping("broken/car/{id}")
-    public String getBrokenCar(@PathVariable Long id, Model model) {
-        model.addAttribute("cars", carRepository.findById(id));
-        return "broken-car";
-    }
-
-    @GetMapping("fixed/car/{id}")
-    public String getFixedCar(@PathVariable Long id, Model model) {
-        model.addAttribute("car", carService.changeIsFixedToTrue(id));
-        carService.saveToFileFixedCars();
-        carService.saveToFileBrokenCars();
-        return "fixed-car";
-    }
-
-    @GetMapping("broken/cars/table")
-    public String getAllBrokenCars(Model model) {
-        model.addAttribute("car", carService.getListOfBrokenCars());
-        return "broken-cars-table";
-    }
-
-    @GetMapping("fixed/cars/table")
-    public String getAllFixedCars(Model model) {
-        model.addAttribute("car", carService.getListOfFixedCars());
-        return "fixed-cars-table";
     }
 
     @GetMapping("/cars/new")
@@ -67,23 +40,5 @@ public class CarController {
         carService.createCar(carDto);
         carService.saveToFileBrokenCars();
         return "addForm-success";
-    }
-
-    @Transactional
-    @PatchMapping("car/{id}")
-    public String toggleCar(@PathVariable Long id) {
-        if (!carRepository.existsById(id)) {
-            return "broken-car";
-        }
-        carRepository.findById(id)
-                .ifPresent(car -> car.setIsFixed(true));
-        return "fixed-car";
-    }
-
-    @GetMapping("search/broken/car")
-    public String searchBrokenCar(Model model, String keyword) {
-        List<Car> cars = carService.getCarByRegistrationNumberAndIsFixed(keyword, false);
-        model.addAttribute("car", cars);
-        return "broken-cars-table";
     }
 }

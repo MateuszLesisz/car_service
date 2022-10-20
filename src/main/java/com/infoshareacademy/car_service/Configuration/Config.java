@@ -18,7 +18,6 @@ public class Config {
         resourceBundleMessageSource.setBasename("messages");
         resourceBundleMessageSource.setDefaultEncoding("UTF-8");
         return resourceBundleMessageSource;
-
     }
 
     @Bean
