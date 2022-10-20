@@ -1,12 +1,11 @@
 package com.infoshareacademy.car_service.service;
 
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.infoshareacademy.car_service.Model.Car;
 import com.infoshareacademy.car_service.dto.CarDto;
 import com.infoshareacademy.car_service.repository.CarRepository;
-import com.infoshareacademy.car_service.utils.GsonLocalDateTime;
+import com.infoshareacademy.car_service.utils.GsonLocalDate;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +27,7 @@ public class CarService {
     private static final String BROKEN_CAR_REPOSITORY_JSON_FILE = "src/main/resources/brokenCars.json";
 
     private static final String FIXED_CAR_REPOSITORY_JSON_FILE = "src/main/resources/fixed_cars/" + LocalDate.now() + " fixedCars.json";
-    private final Gson gson = new GsonBuilder().registerTypeAdapter(LocalDateTime.class, new GsonLocalDateTime()).setPrettyPrinting().create();
+    private final Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new GsonLocalDate()).setPrettyPrinting().create();
 
     public void saveToFileBrokenCars() {
         Collection<Car> cars = carRepository.findCarsByIsFixed(false);
@@ -60,7 +59,7 @@ public class CarService {
                 .name(carDto.getName())
                 .color(carDto.getColor())
                 .yearOfProduction(carDto.getYearOfProduction())
-                .dateOfAddCar(LocalDateTime.now())
+                .dateOfAddCar(LocalDate.now())
                 .isFixed(false)
                 .fixedDate(carDto.getFixedDate())
                 .build();
@@ -80,7 +79,7 @@ public class CarService {
     public Car changeIsFixedToTrue(Long id) {
         Car car = carRepository.findById(id).orElseThrow();
         car.setIsFixed(true);
-        car.setFixedDate(LocalDateTime.now());
+        car.setFixedDate(LocalDate.now());
         return carRepository.save(car);
     }
 

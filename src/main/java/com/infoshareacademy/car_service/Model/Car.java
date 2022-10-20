@@ -38,15 +38,15 @@ public class Car {
     private Integer yearOfProduction;
 
     @Column(name = "dateOfAddCar", nullable = false)
-    private LocalDateTime dateOfAddCar;
+    private LocalDate dateOfAddCar;
 
     @Column(name = "fixed", nullable = false)
     private Boolean isFixed;
 
     @Column(name = "fixedDate")
-    private LocalDateTime fixedDate;
+    private LocalDate fixedDate;
 
-    public Car(String registrationNumber, String name, Color color, Integer yearOfProduction, LocalDateTime dateOfAddCar, Boolean isFixed, LocalDateTime fixedDate) {
+    public Car(String registrationNumber, String name, Color color, Integer yearOfProduction, LocalDate dateOfAddCar, Boolean isFixed, LocalDate fixedDate) {
         this.registrationNumber = registrationNumber;
         this.name = name;
         this.color = color;

@@ -6,7 +6,7 @@ create table car
     name               varchar(100) not null,
     color              varchar(100) not null,
     yearOfProduction   int          not null,
-    dateOfAddCar       datetime     not null,
+    dateOfAddCar       date         not null,
     isFixed            bit          not null,
-    fixedDate          datetime     null
+    fixedDate          date         null
 );
