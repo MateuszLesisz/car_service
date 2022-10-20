@@ -4,6 +4,7 @@ import com.infoshareacademy.car_service.Model.Car;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Repository
@@ -12,5 +13,7 @@ public interface CarRepository extends JpaRepository<Car, Long> {
     List<Car> findCarsByIsFixed(Boolean isFixed);
 
     List<Car> findCarByRegistrationNumberAndIsFixed(String registrationNumber, boolean isFixed);
+
+    List<Car> findCarsByIsFixedAndFixedDate(boolean isFixed, LocalDate localDate);
 
 }

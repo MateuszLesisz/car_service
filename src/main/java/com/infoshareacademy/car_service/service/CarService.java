@@ -42,7 +42,7 @@ public class CarService {
     }
 
     public void saveToFileFixedCars() {
-        Collection<Car> cars = carRepository.findCarsByIsFixed(true);
+        Collection<Car> cars = carRepository.findCarsByIsFixedAndFixedDate(true, LocalDate.now());
         try {
             Writer writer = new FileWriter(FIXED_CAR_REPOSITORY_JSON_FILE);
             gson.toJson(cars, writer);
