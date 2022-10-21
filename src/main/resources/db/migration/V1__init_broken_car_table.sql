@@ -1,5 +1,5 @@
 
-create table broken_car
+create table car
 (
     id                 bigint primary key auto_increment,
     registrationNumber varchar(100) not null,
