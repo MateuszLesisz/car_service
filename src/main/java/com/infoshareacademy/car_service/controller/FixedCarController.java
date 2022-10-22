@@ -1,7 +1,5 @@
 package com.infoshareacademy.car_service.controller;
 
-import com.infoshareacademy.car_service.Model.BrokenCar;
-import com.infoshareacademy.car_service.repository.FixedCarRepository;
 import com.infoshareacademy.car_service.service.BrokenCarService;
 import com.infoshareacademy.car_service.service.FixedCarService;
 import lombok.AllArgsConstructor;
@@ -18,8 +16,6 @@ public class FixedCarController {
 
     private final BrokenCarService brokenCarService;
     private final FixedCarService fixedCarService;
-
-
 
     @GetMapping("/{id}")
     public String getFixedCar(@PathVariable Long id, Model model) {

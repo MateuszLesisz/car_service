@@ -27,7 +27,7 @@
         <th th:text="#{brokenCar.isFixed}"></th>
     </tr>
     <tr th:each="brokenCar: ${car}" th:field="${brokenCar}">
-        <td th:text="${brokenCar.id}"></td>
+        <td th:text="${brokenCar.getBrokenCar().getId()}"></td>
         <td th:text="${brokenCar.getBrokenCar().getRegistrationNumber()}"></td>
         <td th:text="${brokenCar.getBrokenCar().getName()}"></td>
         <td th:text="${brokenCar.getBrokenCar().getColor()}"></td>

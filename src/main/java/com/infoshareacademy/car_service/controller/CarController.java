@@ -18,7 +18,6 @@ import javax.validation.Valid;
 public class CarController {
 
     private final BrokenCarService carService;
-    private final BrokenCarRepository brokenCarRepository;
 
     @GetMapping
     public String welcomePage() {
