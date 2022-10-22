@@ -31,10 +31,8 @@ public class BrokenCarService {
     private static final String FIXED_CAR_REPOSITORY_JSON_FILE = "src/main/resources/fixed_cars/" + LocalDate.now() + " fixedCars.json";
     private final Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new GsonLocalDate()).setPrettyPrinting().create();
 
-
-
     public void saveToFileBrokenCars() {
-        Collection<BrokenCar> brokenCars = brokenCarRepository.findBrokenCarsByIsFixed(false);
+        Collection<BrokenCar> brokenCars = brokenCarRepository.findAll();
         try {
             Writer writer = new FileWriter(BROKEN_CAR_REPOSITORY_JSON_FILE);
             gson.toJson(brokenCars, writer);

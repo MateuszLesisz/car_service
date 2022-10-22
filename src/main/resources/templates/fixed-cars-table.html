@@ -26,14 +26,14 @@
         <th th:text="#{brokenCar.date}"></th>
         <th th:text="#{brokenCar.isFixed}"></th>
     </tr>
-    <tr th:each="brokenCar, iterStat : ${car}" th:class="${iterStat.odd}? 'white-row'">
+    <tr th:each="brokenCar: ${car}" th:field="${brokenCar}">
         <td th:text="${brokenCar.id}"></td>
-        <td th:text="${brokenCar.registrationNumber}"></td>
-        <td th:text="${brokenCar.name}"></td>
-        <td th:text="${brokenCar.color}"></td>
-        <td th:text="${brokenCar.yearOfProduction}"></td>
-        <td th:text="${brokenCar.dateOfAddCar}"></td>
-        <td th:text="${brokenCar.isFixed}"></td>
+        <td th:text="${brokenCar.getBrokenCar().getRegistrationNumber()}"></td>
+        <td th:text="${brokenCar.getBrokenCar().getName()}"></td>
+        <td th:text="${brokenCar.getBrokenCar().getColor()}"></td>
+        <td th:text="${brokenCar.brokenCar.getYearOfProduction()}"></td>
+        <td th:text="${brokenCar.getBrokenCar().getDateOfAddCar()}"></td>
+        <td th:text="${brokenCar.fixedDate}"></td>
     </tr>
 </table>
 <nav>
