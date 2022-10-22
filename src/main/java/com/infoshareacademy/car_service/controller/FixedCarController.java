@@ -1,5 +1,6 @@
 package com.infoshareacademy.car_service.controller;
 
+import com.infoshareacademy.car_service.Model.BrokenCar;
 import com.infoshareacademy.car_service.repository.FixedCarRepository;
 import com.infoshareacademy.car_service.service.BrokenCarService;
 import com.infoshareacademy.car_service.service.FixedCarService;
@@ -23,7 +24,8 @@ public class FixedCarController {
     @GetMapping("/{id}")
     public String getFixedCar(@PathVariable Long id, Model model) {
         model.addAttribute("car", brokenCarService.changeIsFixedToTrue(id));
-        fixedCarService.saveToFileFixedCars();
+        brokenCarService.saveFixedCarById(id);
+        brokenCarService.saveToFileFixedCars();
         brokenCarService.saveToFileBrokenCars();
         return "fixed-car";
     }

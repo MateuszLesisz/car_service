@@ -3,6 +3,7 @@ package com.infoshareacademy.car_service.Model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -19,7 +20,7 @@ public class FixedCar {
     private Long id;
 
     @Column(name = "fixedDate", nullable = false)
-    private LocalDateTime fixedDate;
+    private LocalDate fixedDate;
 
     @ManyToOne
     @JoinColumn(name = "car_id")

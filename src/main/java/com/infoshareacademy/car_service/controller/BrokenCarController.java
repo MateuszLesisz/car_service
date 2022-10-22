@@ -28,7 +28,7 @@ public class BrokenCarController {
 
     @GetMapping("/table")
     public String getAllBrokenCars(Model model) {
-        model.addAttribute("car", brokenCaService.getListOfBrokenCars());
+        model.addAttribute("car", brokenCarRepository.findAll());
         return "broken-cars-table";
     }
 
