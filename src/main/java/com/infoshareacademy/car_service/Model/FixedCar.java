@@ -9,12 +9,9 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Builder
-@Table(name = Car.TABLE_NAME)
 @NoArgsConstructor
 @AllArgsConstructor
 public class FixedCar {
-
-    public static final String TABLE_NAME = "fixed_car";
 
     @Id
     @Column(name = "id")
@@ -26,6 +23,6 @@ public class FixedCar {
 
     @ManyToOne
     @JoinColumn(name = "car_id")
-    private Car car;
+    private BrokenCar brokenCar;
 
 }

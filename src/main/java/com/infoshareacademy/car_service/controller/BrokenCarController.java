@@ -1,8 +1,8 @@
 package com.infoshareacademy.car_service.controller;
 
-import com.infoshareacademy.car_service.Model.Car;
-import com.infoshareacademy.car_service.repository.CarRepository;
-import com.infoshareacademy.car_service.service.CarService;
+import com.infoshareacademy.car_service.Model.BrokenCar;
+import com.infoshareacademy.car_service.repository.BrokenCarRepository;
+import com.infoshareacademy.car_service.service.BrokenCarService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,26 +17,25 @@ import java.util.List;
 @RequestMapping(value = "broken/car")
 public class BrokenCarController {
 
-    private final CarRepository carRepository;
-
-    private final CarService carService;
+    private final BrokenCarRepository brokenCarRepository;
+    private final BrokenCarService brokenCaService;
 
     @GetMapping("/{id}")
     public String getBrokenCar(@PathVariable Long id, Model model) {
-        model.addAttribute("cars", carRepository.findById(id));
+        model.addAttribute("cars", brokenCarRepository.findById(id));
         return "broken-car";
     }
 
     @GetMapping("/table")
     public String getAllBrokenCars(Model model) {
-        model.addAttribute("car", carService.getListOfBrokenCars());
+        model.addAttribute("car", brokenCaService.getListOfBrokenCars());
         return "broken-cars-table";
     }
 
     @GetMapping("/search")
     public String searchBrokenCar(Model model, String keyword) {
-        List<Car> cars = carService.getCarByRegistrationNumberAndIsFixed(keyword, false);
-        model.addAttribute("car", cars);
+        List<BrokenCar> brokenCars = brokenCaService.getCarByRegistrationNumberAndIsFixed(keyword, false);
+        model.addAttribute("car", brokenCars);
         return "broken-cars-table";
     }
 }

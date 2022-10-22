@@ -5,17 +5,14 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Builder
-@Table(name = Car.TABLE_NAME)
 @NoArgsConstructor
 @AllArgsConstructor
-public class Car {
-
-    public static final String TABLE_NAME = "broken_car";
+public class BrokenCar {
 
     @Id
     @Column(name = "id")
@@ -51,7 +48,7 @@ public class Car {
     @Setter
     private LocalDate fixedDate;
 
-    public Car(String registrationNumber, String name, Color color, Integer yearOfProduction, LocalDate dateOfAddCar, Boolean isFixed, LocalDate fixedDate) {
+    public BrokenCar(String registrationNumber, String name, Color color, Integer yearOfProduction, LocalDate dateOfAddCar, Boolean isFixed, LocalDate fixedDate) {
         this.registrationNumber = registrationNumber;
         this.name = name;
         this.color = color;

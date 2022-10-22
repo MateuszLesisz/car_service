@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text ="#{cars.title}"></title>
+    <title th:text ="#{brokenCars.title}"></title>
     <link th:href="@{/css/table.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -14,32 +14,32 @@
     </div>
 </nav>
 
-<h1 th:text="#{cars.headline}"></h1>
+<h1 th:text="#{brokenCars.headline}"></h1>
 
 <table>
     <tr>
-        <th th:text="#{car.id}"></th>
-        <th th:text="#{car.registrationNumber}"></th>
-        <th th:text="#{car.name}"></th>
-        <th th:text="#{car.color}"></th>
-        <th th:text="#{car.yearOfProduction}"></th>
-        <th th:text="#{car.date}"></th>
-        <th th:text="#{car.isFixed}"></th>
+        <th th:text="#{brokenCar.id}"></th>
+        <th th:text="#{brokenCar.registrationNumber}"></th>
+        <th th:text="#{brokenCar.name}"></th>
+        <th th:text="#{brokenCar.color}"></th>
+        <th th:text="#{brokenCar.yearOfProduction}"></th>
+        <th th:text="#{brokenCar.date}"></th>
+        <th th:text="#{brokenCar.isFixed}"></th>
     </tr>
-    <tr th:each="car, iterStat : ${car}" th:class="${iterStat.odd}? 'white-row'">
-        <td th:text="${car.id}"></td>
-        <td th:text="${car.registrationNumber}"></td>
-        <td th:text="${car.name}"></td>
-        <td th:text="${car.color}"></td>
-        <td th:text="${car.yearOfProduction}"></td>
-        <td th:text="${car.dateOfAddCar}"></td>
-        <td th:text="${car.isFixed}"></td>
+    <tr th:each="brokenCar, iterStat : ${car}" th:class="${iterStat.odd}? 'white-row'">
+        <td th:text="${brokenCar.id}"></td>
+        <td th:text="${brokenCar.registrationNumber}"></td>
+        <td th:text="${brokenCar.name}"></td>
+        <td th:text="${brokenCar.color}"></td>
+        <td th:text="${brokenCar.yearOfProduction}"></td>
+        <td th:text="${brokenCar.dateOfAddCar}"></td>
+        <td th:text="${brokenCar.isFixed}"></td>
     </tr>
 </table>
 <nav>
     <div>
         <a th:href = "@{/}">
-            <button type = "button" th:text = "#{cars.back.button}"></button>
+            <button type = "button" th:text = "#{brokenCars.back.button}"></button>
         </a>
     </div>
 </nav>

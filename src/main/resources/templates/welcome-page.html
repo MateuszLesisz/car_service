@@ -9,20 +9,20 @@
 
 <nav>
     <div>
-        <h1 th:text="#{welcome-page.all.cars}"></h1>
+        <h1 th:text="#{welcome-page.all.brokenCars}"></h1>
         <a th:href = "@{broken/car/table}">
             <button type = "button" th:text = "#{welcome-page.button.submit}"></button>
         </a>
     </div>
     <div>
-        <h1 th:text="#{welcome-page.fixed.cars}"></h1>
+        <h1 th:text="#{welcome-page.fixed.brokenCars}"></h1>
         <a th:href = "@{fixed/car/table}">
             <button type = "button" th:text = "#{welcome-page.button.submit}"></button>
         </a>
     </div>
-    <h1 th:text="#{welcome.page.add.car.for.repair}"></h1>
+    <h1 th:text="#{welcome.page.add.brokenCar.for.repair}"></h1>
     <div>
-        <a th:href="@{/cars/new}">
+        <a th:href="@{/car/new}">
             <button type="button" th:text="#{welcome-page.button.submit}"></button>
         </a>
     </div>

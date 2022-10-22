@@ -2,29 +2,29 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text ="#{cars.title}"></title>
+    <title th:text ="#{brokenCars.title}"></title>
 </head>
 <body>
 
-<h1 th:text="#{fixed.car.headline}"></h1>
+<h1 th:text="#{fixed.brokenCar.headline}"></h1>
 
 <ul>
-    <li th:text="#{car.id} + ': ' + ${car.id}"></li>
-    <li th:text="#{car.registrationNumber} + ': ' + ${car.registrationNumber}"></li>
-    <li th:text="#{car.name} + ': ' + ${car.name}"></li>
-    <li th:text="#{car.color} + ': ' + ${car.color}"></li>
-    <li th:text="#{car.yearOfProduction} + ': ' + ${car.yearOfProduction}"></li>
-    <li th:text="#{car.date} + ': ' + ${car.dateOfAddCar}"></li>
+    <li th:text="#{brokenCar.id} + ': ' + ${car.id}"></li>
+    <li th:text="#{brokenCar.registrationNumber} + ': ' + ${car.registrationNumber}"></li>
+    <li th:text="#{brokenCar.name} + ': ' + ${car.name}"></li>
+    <li th:text="#{brokenCar.color} + ': ' + ${car.color}"></li>
+    <li th:text="#{brokenCar.yearOfProduction} + ': ' + ${car.yearOfProduction}"></li>
+    <li th:text="#{brokenCar.date} + ': ' + ${car.dateOfAddCar}"></li>
     <div th:switch="${car.isFixed}">
-        <li th:if="${car.isFixed}" th:text="#{car.isFixed} + ': ' + #{car.fixed}"></li>
-        <li th:unless="${car.isFixed}" th:text="#{car.isFixed} + ': ' + ${car.isFixed}"></li>
+        <li th:if="${car.isFixed}" th:text="#{brokenCar.isFixed} + ': ' + #{brokenCar.fixed}"></li>
+        <li th:unless="${car.isFixed}" th:text="#{brokenCar.isFixed} + ': ' + ${car.isFixed}"></li>
     </div>
 </ul>
 
 <nav>
     <div>
         <a th:href = "@{/}">
-            <button type = "button" th:text = "#{cars.back.button}"></button>
+            <button type = "button" th:text = "#{brokenCars.back.button}"></button>
         </a>
     </div>
 </nav>

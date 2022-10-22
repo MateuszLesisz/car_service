@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 
 @Data
-public class CarDto {
+public class BrokenCarDto {
 
     private Long id;
     @NotBlank(message = "Registration number field cannot be empty")

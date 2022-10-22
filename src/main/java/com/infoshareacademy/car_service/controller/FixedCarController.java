@@ -1,6 +1,6 @@
 package com.infoshareacademy.car_service.controller;
 
-import com.infoshareacademy.car_service.service.CarService;
+import com.infoshareacademy.car_service.service.BrokenCarService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "fixed/car")
 public class FixedCarController {
 
-    private final CarService carService;
+    private final BrokenCarService carService;
 
     @GetMapping("/{id}")
     public String getFixedCar(@PathVariable Long id, Model model) {
