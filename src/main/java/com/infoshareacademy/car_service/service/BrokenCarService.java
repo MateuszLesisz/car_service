@@ -27,7 +27,6 @@ public class BrokenCarService {
     private final BrokenCarRepository brokenCarRepository;
     private final FixedCarRepository fixedCarRepository;
     private static final String BROKEN_CAR_REPOSITORY_JSON_FILE = "src/main/resources/brokenCars.json";
-    private static final String FIXED_CAR_REPOSITORY_JSON_FILE = "src/main/resources/fixed_cars/" + LocalDate.now() + " fixedCars.json";
     private final Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new GsonLocalDate()).setPrettyPrinting().create();
 
     public void saveToFileBrokenCars() {
@@ -35,18 +34,6 @@ public class BrokenCarService {
         try {
             Writer writer = new FileWriter(BROKEN_CAR_REPOSITORY_JSON_FILE);
             gson.toJson(brokenCars, writer);
-            writer.flush();
-            writer.close();
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public void saveToFileFixedCars() {
-        Collection<FixedCar> fixedCars = fixedCarRepository.findAll();
-        try {
-            Writer writer = new FileWriter(FIXED_CAR_REPOSITORY_JSON_FILE);
-            gson.toJson(fixedCars, writer);
             writer.flush();
             writer.close();
         } catch (IOException e) {
@@ -71,10 +58,8 @@ public class BrokenCarService {
         return brokenCarRepository.findBrokenCarsByIsFixed(false);
     }
 
-    public List<BrokenCar> getListOfFixedCars() {
-        List<BrokenCar> brokenCars = brokenCarRepository.findBrokenCarsByIsFixed(true);
-        Collections.sort(brokenCars, Comparator.comparing(BrokenCar::getFixedDate).reversed());
-        return brokenCars;
+    public List<BrokenCar> getCarByRegistrationNumberAndIsFixed(String registrationNumber, boolean isFixed) {
+        return brokenCarRepository.findBrokenCarByRegistrationNumberAndIsFixed(registrationNumber, isFixed);
     }
 
     public BrokenCar changeIsFixedToTrue(Long id) {
@@ -82,9 +67,5 @@ public class BrokenCarService {
         brokenCar.setIsFixed(true);
         brokenCar.setFixedDate(LocalDate.now());
         return brokenCarRepository.save(brokenCar);
-    }
-
-    public List<BrokenCar> getCarByRegistrationNumberAndIsFixed(String registrationNumber, boolean isFixed) {
-        return brokenCarRepository.findBrokenCarByRegistrationNumberAndIsFixed(registrationNumber, isFixed);
     }
 }
