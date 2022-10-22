@@ -14,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 public class FixedCarService {
     private final FixedCarRepository fixedCarRepository;
+    private final BrokenCarService brokenCarService;
 
     public void createFixedCar(BrokenCar brokenCar) {
         FixedCar fixedCar = FixedCar.builder()
@@ -22,6 +23,11 @@ public class FixedCarService {
                 .build();
 
         fixedCarRepository.save(fixedCar);
+    }
+
+    public void saveFixedCarById(Long id) {
+        BrokenCar brokenCar = brokenCarService.changeIsFixedToTrue(id);
+        createFixedCar(brokenCar);
     }
 
     public List<FixedCar> getListOfReversedFixedCars() {

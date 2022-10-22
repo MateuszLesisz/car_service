@@ -1,8 +1,8 @@
 package com.infoshareacademy.car_service.controller;
 
 import com.infoshareacademy.car_service.dto.BrokenCarDto;
-import com.infoshareacademy.car_service.repository.BrokenCarRepository;
 import com.infoshareacademy.car_service.service.BrokenCarService;
+import com.infoshareacademy.car_service.utils.SaveToFile;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +18,7 @@ import javax.validation.Valid;
 public class CarController {
 
     private final BrokenCarService carService;
+    private final SaveToFile saveToFile;
 
     @GetMapping
     public String welcomePage() {
@@ -37,7 +38,7 @@ public class CarController {
             return "addForm";
         }
         carService.createCar(brokenCarDto);
-        carService.saveToFileBrokenCars();
+        saveToFile.saveToFileBrokenCars();
         return "addForm-success";
     }
 }

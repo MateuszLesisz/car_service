@@ -2,6 +2,7 @@ package com.infoshareacademy.car_service.controller;
 
 import com.infoshareacademy.car_service.service.BrokenCarService;
 import com.infoshareacademy.car_service.service.FixedCarService;
+import com.infoshareacademy.car_service.utils.SaveToFile;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,12 +17,13 @@ public class FixedCarController {
 
     private final BrokenCarService brokenCarService;
     private final FixedCarService fixedCarService;
+    private final SaveToFile saveToFile;
 
     @GetMapping("/{id}")
     public String getFixedCar(@PathVariable Long id, Model model) {
         model.addAttribute("car", brokenCarService.changeIsFixedToTrue(id));
-        brokenCarService.saveFixedCarById(id);
-        brokenCarService.saveToFileFixedCars();
+        fixedCarService.saveFixedCarById(id);
+        saveToFile.saveToFileFixedCars();
         return "fixed-car";
     }
 
