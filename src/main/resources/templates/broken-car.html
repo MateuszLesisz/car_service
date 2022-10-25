@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text ="#{brokenCars.title}"></title>
+    <title th:text ="#{service.title}"></title>
 </head>
 <body>
 
@@ -13,27 +13,26 @@
     </div>
 </nav>
 
-<h1 th:text="#{brokenCars.headline}"></h1>
+<h1 th:text="#{broken.car.info}"></h1>
 
 <ul>
-    <li th:text="#{brokenCar.id} + ': ' + ${cars.get().id}"></li>
-    <li th:text="#{brokenCar.registrationNumber} + ': ' + ${cars.get().registrationNumber}"></li>
-    <li th:text="#{brokenCar.name} + ': ' + ${cars.get().name}"></li>
-    <li th:text="#{brokenCar.color} + ': ' + ${cars.get().color}"></li>
-    <li th:text="#{brokenCar.yearOfProduction} + ': ' + ${cars.get().yearOfProduction}"></li>
-    <li th:text="#{brokenCar.date} + ': ' + ${cars.get().dateOfAddCar}"></li>
+    <li th:text="#{broken.car.registrationNumber} + ': ' + ${cars.get().registrationNumber}"></li>
+    <li th:text="#{broken.car.name} + ': ' + ${cars.get().name}"></li>
+    <li th:text="#{broken.car.color} + ': ' + ${cars.get().color}"></li>
+    <li th:text="#{broken.car.yearOfProduction} + ': ' + ${cars.get().yearOfProduction}"></li>
+    <li th:text="#{broken.car.add.date} + ': ' + ${cars.get().dateOfAddCar}"></li>
     <div th:switch="${cars.get().isFixed}">
-        <li th:if="${cars.get().isFixed}" th:text="#{brokenCar.isFixed} + ': ' + #{brokenCar.fixed}"></li>
-        <li th:unless="${cars.get().isFixed}" th:text="#{brokenCar.isFixed} + ': ' + #{brokenCar.not.fixed}"></li>
+        <li th:if="${cars.get().isFixed}" th:text="#{broken.car.isFixed} + ': ' + #{broken.car.fixed}"></li>
+        <li th:unless="${cars.get().isFixed}" th:text="#{broken.car.isFixed} + ': ' + #{broken.car.not.fixed}"></li>
         <a th:href="@{/fixed/car/{id}(id=${cars.get().id})}">
-            <button type="button" th:text="#{brokenCar.fix}"></button>
+            <button type="button" th:text="#{broken.car.fix}"></button>
         </a>
     </div>
 </ul>
 <nav>
     <div>
         <a th:href = "@{/}">
-            <button type = "button" th:text = "#{brokenCars.back.button}"></button>
+            <button type = "button" th:text = "#{broken.car.back.button}"></button>
         </a>
     </div>
 </nav>
