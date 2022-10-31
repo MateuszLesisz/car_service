@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title th:text ="#{welcome-page.title}"></title>
+    <link th:href="@{style.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-
-
 <nav>
     <div>
         <h1 th:text="#{welcome-page.all.broken.cars}"></h1>
@@ -26,7 +25,6 @@
             <button type="button" th:text="#{welcome-page.button.add}"></button>
         </a>
     </div>
-
 </nav>
 </body>
 </html>

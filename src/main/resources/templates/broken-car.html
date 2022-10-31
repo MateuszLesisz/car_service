@@ -5,16 +5,13 @@
     <title th:text ="#{service.title}"></title>
 </head>
 <body>
-
 <nav>
     <div>
         <a th:href="@{broken/car/table}">
         </a>
     </div>
 </nav>
-
 <h1 th:text="#{broken.car.info}"></h1>
-
 <ul>
     <li th:text="#{broken.car.registrationNumber} + ': ' + ${cars.get().registrationNumber}"></li>
     <li th:text="#{broken.car.name} + ': ' + ${cars.get().name}"></li>

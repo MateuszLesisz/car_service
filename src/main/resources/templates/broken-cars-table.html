@@ -6,14 +6,12 @@
     <link th:href="@{/css/table.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-
 <nav>
     <div>
         <a th:href="@{/}">
         </a>
     </div>
 </nav>
-
 <h1 th:text="#{broken.cars.headline}"></h1>
 <div>
     <form th:action="@{/broken/car/search}" method="get">

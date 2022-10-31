@@ -15,17 +15,17 @@
                 <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
             </ul>
         </div>
-        <label th:for="registrationNumber_input_id" th:text="#{brokenCar.registrationNumber}"></label>
+        <label th:for="registrationNumber_input_id" th:text="#{broken.car.registrationNumber}"></label>
         <br>
         <input type="text" id="registrationNumber_input_id" th:field="*{registrationNumber}">
         <br>
         <br>
-        <label th:for="name_input_id" th:text="#{brokenCar.name}"></label>
+        <label th:for="name_input_id" th:text="#{broken.car.name}"></label>
         <br>
         <input type="text" id="name_input_id" th:field="*{name}">
         <br>
         <br>
-        <label th:for="color_input_id" th:text="#{brokenCar.color}"></label>
+        <label th:for="color_input_id" th:text="#{broken.car.color}"></label>
         <br>
         <select id="color_input_id" th:field="*{color}">
             <option th:each="colorOpt : ${T(com.infoshareacademy.car_service.dto.Color).values()}"
@@ -33,7 +33,7 @@
         </select>
         <br>
         <br>
-        <label th:for="yearOfProduction_input_id" th:text="#{brokenCar.yearOfProduction}"></label>
+        <label th:for="yearOfProduction_input_id" th:text="#{broken.car.yearOfProduction}"></label>
         <br>
         <input type="text" id="yearOfProduction_input_id" th:field="*{yearOfProduction}">
         <br>
@@ -48,6 +48,5 @@
     </a>
   </div>
 </nav>
-
 </body>
 </html>

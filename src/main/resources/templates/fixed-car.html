@@ -5,9 +5,7 @@
     <title th:text ="#{service.title}"></title>
 </head>
 <body>
-
-<h1 th:text="#{fixed.car.headline}"></h1>
-
+<h1 th:text="#{fixed.cars.headline}"></h1>
 <ul>
     <li th:text="#{broken.car.registrationNumber} + ': ' + ${car.registrationNumber}"></li>
     <li th:text="#{broken.car.name} + ': ' + ${car.name}"></li>
@@ -19,7 +17,6 @@
         <li th:unless="${car.isFixed}" th:text="#{broken.car.isFixed} + ': ' + ${car.isFixed}"></li>
     </div>
 </ul>
-
 <nav>
     <div>
         <a th:href = "@{/}">
