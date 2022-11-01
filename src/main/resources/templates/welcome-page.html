@@ -3,28 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title th:text ="#{welcome-page.title}"></title>
-    <link th:href="@{style.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{css/style.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<nav>
-    <div>
+<div th:class="container">
+    <header>
+        <img src="../static/images/auto.png" width="1000" th:src="@{images/auto.png}" th:width="110">
+    </header>
         <h1 th:text="#{welcome-page.all.broken.cars}"></h1>
         <a th:href = "@{broken/car/table}">
             <button type = "button" th:text = "#{welcome-page.button.check}"></button>
         </a>
-    </div>
-    <div>
         <h1 th:text="#{welcome-page.fixed.cars}"></h1>
         <a th:href = "@{fixed/car/table}">
             <button type = "button" th:text = "#{welcome-page.button.check}"></button>
         </a>
-    </div>
     <h1 th:text="#{welcome.page.add.broken.car}"></h1>
-    <div>
         <a th:href="@{/car/new}">
             <button type="button" th:text="#{welcome-page.button.add}"></button>
         </a>
-    </div>
-</nav>
+</div>
 </body>
 </html>
