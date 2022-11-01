@@ -8,20 +8,30 @@
 <body>
 <div th:class="container">
     <header>
-        <img src="../static/images/auto.png" width="1000" th:src="@{images/auto.png}" th:width="110">
+        <img src="../static/images/auto.png" width="1000" th:src="@{images/auto.png}" th:width="110" alt="logo for car service">
     </header>
-        <h1 th:text="#{welcome-page.all.broken.cars}"></h1>
-        <a th:href = "@{broken/car/table}">
-            <button type = "button" th:text = "#{welcome-page.button.check}"></button>
-        </a>
-        <h1 th:text="#{welcome-page.fixed.cars}"></h1>
-        <a th:href = "@{fixed/car/table}">
-            <button type = "button" th:text = "#{welcome-page.button.check}"></button>
-        </a>
-    <h1 th:text="#{welcome.page.add.broken.car}"></h1>
-        <a th:href="@{/car/new}">
-            <button type="button" th:text="#{welcome-page.button.add}"></button>
-        </a>
+
+    <nav>
+<!--        <a th:href = "@{broken/car/table}">-->
+<!--            <button type = "button" th:text = "#{welcome-page.button.check}"></button>-->
+<!--        </a>-->
+<!--        <h1 th:text="#{welcome-page.fixed.cars}"></h1>-->
+<!--        <a th:href = "@{fixed/car/table}">-->
+<!--            <button type = "button" th:text = "#{welcome-page.button.check}"></button>-->
+<!--        </a>-->
+<!--    <h1 th:text="#{welcome.page.add.broken.car}"></h1>-->
+<!--        <a th:href="@{/car/new}">-->
+<!--            <button type="button" th:text="#{welcome-page.button.add}"></button>-->
+<!--        </a>-->
+    </nav>
+
+    <main>
+        <h1 th:text="#{welcome-page.welcome}"></h1>
+        <p th:text="#{info.welcome.page}"></p>
+    </main>
+
+    <footer></footer>
+
 </div>
 </body>
 </html>
