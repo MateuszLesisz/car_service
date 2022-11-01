@@ -19,15 +19,14 @@
 <!--        <a th:href = "@{fixed/car/table}">-->
 <!--            <button type = "button" th:text = "#{welcome-page.button.check}"></button>-->
 <!--        </a>-->
-<!--    <h1 th:text="#{welcome.page.add.broken.car}"></h1>-->
-<!--        <a th:href="@{/car/new}">-->
-<!--            <button type="button" th:text="#{welcome-page.button.add}"></button>-->
-<!--        </a>-->
+
     </nav>
 
     <main>
         <h1 th:text="#{welcome-page.welcome}"></h1>
         <p th:text="#{info.welcome.page}"></p>
+        <a th:href="@{/car/new}", th:target="_blank" th:text="#{add.new.car}">
+        </a>
     </main>
 
     <footer></footer>
