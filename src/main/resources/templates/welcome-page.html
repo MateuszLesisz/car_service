@@ -11,14 +11,10 @@
     </header>
 
     <nav>
-<!--        <a th:href = "@{broken/car/table}">-->
-<!--            <button type = "button" th:text = "#{welcome-page.button.check}"></button>-->
-<!--        </a>-->
-<!--        <h1 th:text="#{welcome-page.fixed.cars}"></h1>-->
-<!--        <a th:href = "@{fixed/car/table}">-->
-<!--            <button type = "button" th:text = "#{welcome-page.button.check}"></button>-->
-<!--        </a>-->
-
+        <a th:href = "@{broken/car/table}", th:target="_blank" th:text="#{check.broken.cars}">
+        </a>
+        <a th:href = "@{fixed/car/table}", th:target="_blank" th:text="#{check.fixed.cars}">
+        </a>
     </nav>
 
     <main>
