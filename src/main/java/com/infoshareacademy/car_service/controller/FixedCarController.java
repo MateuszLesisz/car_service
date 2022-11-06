@@ -24,6 +24,7 @@ public class FixedCarController {
         model.addAttribute("car", brokenCarService.changeIsFixedToTrue(id));
         fixedCarService.saveFixedCarById(id);
         saveToFile.saveToFileFixedCars();
+        saveToFile.saveToFileBrokenCars();
         return "fixed-car";
     }
 

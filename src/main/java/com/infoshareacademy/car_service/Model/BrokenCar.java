@@ -4,6 +4,7 @@ import com.infoshareacademy.car_service.dto.Color;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
@@ -16,29 +17,34 @@ import java.time.LocalDate;
 public class BrokenCar {
 
     @Id
-    @Column(name = "id")
+    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "registration_number", nullable = false)
+    @NotNull
+    @Column
     private String registrationNumber;
 
-    @Column(name = "name", nullable = false)
+    @Column
+    @NotNull
     private String name;
 
-    @Column(name = "color", nullable = false)
+    @Column
+    @NotNull
     private Color color;
 
-    @Column(name = "year_of_production", nullable = false)
+    @Column
+    @NotNull
     private Integer yearOfProduction;
 
-    @Column(name = "dateOfAddCar", nullable = false)
+    @Column
+    @NotNull
     private LocalDate dateOfAddCar;
 
-    @Column(name = "fixed", nullable = false)
+    @Column
+    @NotNull
     private Boolean isFixed;
 
-    @Column(name = "fixedDate")
+    @Column
     private LocalDate fixedDate;
-
 }

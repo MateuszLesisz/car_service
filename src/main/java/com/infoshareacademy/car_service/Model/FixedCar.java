@@ -15,11 +15,11 @@ import java.time.LocalDate;
 public class FixedCar {
 
     @Id
-    @Column(name = "id")
+    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "fixedDate", nullable = false)
+    @Column
     private LocalDate fixedDate;
 
     @ManyToOne
