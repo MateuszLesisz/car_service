@@ -24,7 +24,7 @@ public class SaveToFile {
     private final BrokenCarRepository brokenCarRepository;
     private final FixedCarRepository fixedCarRepository;
 
-    private static final String BROKEN_CAR_REPOSITORY_JSON_FILE = "src/main/resources/brokenCars.json";
+    private static final String BROKEN_CAR_REPOSITORY_JSON_FILE = "src/main/resources/cars.json";
     private static final String FIXED_CAR_REPOSITORY_JSON_FILE = "src/main/resources/fixed_cars/" + LocalDate.now() + " fixedCars.json";
     private final Gson gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new GsonLocalDate()).setPrettyPrinting().create();
 
