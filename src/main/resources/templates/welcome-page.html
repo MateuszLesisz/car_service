@@ -11,16 +11,16 @@
     </header>
 
     <nav>
-        <a th:href = "@{broken/car/table}", th:target="_blank" th:text="#{check.broken.cars}">
+        <a th:href = "@{broken/car/table}" th:text="#{check.broken.cars}">
         </a>
-        <a th:href = "@{fixed/car/table}", th:target="_blank" th:text="#{check.fixed.cars}">
+        <a th:href = "@{fixed/car/table}" th:text="#{check.fixed.cars}">
         </a>
     </nav>
 
     <main>
         <h1 th:text="#{welcome-page.welcome}"></h1>
         <p th:text="#{info.welcome.page}"></p>
-        <a th:href="@{/car/new}", th:target="_blank" th:text="#{add.new.car}">
+        <a th:href="@{/car/new}" th:text="#{add.new.car}">
         </a>
     </main>
 

@@ -4,44 +4,53 @@
     <meta charset="UTF-8">
     <title th:text ="#{service.title}"></title>
     <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/table.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div th:class="container">
 <header>
+    <h1 th:text="#{broken.cars.headline}"></h1>
 </header>
-<!--<h1 th:text="#{broken.cars.headline}"></h1>-->
+
 <nav>
-        <form th:action="@{/broken/car/search}" method="get">
-            <input type="text" name="keyword" th:value="${keyword}" placeholder = "Find by Registration Number" size="50">
-            <input type="submit" value="search">
-        </form>
+    <a th:href = "@{/}" th:text="#{main.page}">
+    </a>
+    <a th:href = "@{/fixed/car/table}" th:text="#{check.fixed.cars}">
+    </a>
+    <a th:href = "@{/broken/car/table}" th:text="#{check.broken.cars}">
+    </a>
+    <a th:href="@{/car/new}" th:text="#{add.new.car}">
+    </a>
 </nav>
-<main>
-<!--<table>-->
-<!--    <tr>-->
-<!--        <th th:text="#{broken.car.registrationNumber}"></th>-->
-<!--        <th th:text="#{broken.car.name}"></th>-->
-<!--        <th th:text="#{broken.car.color}"></th>-->
-<!--        <th th:text="#{broken.car.yearOfProduction}"></th>-->
-<!--        <th th:text="#{broken.car.add.date}"></th>-->
-<!--        <th th:text="#{broken.car.isFixed}"></th>-->
-<!--    </tr>-->
-<!--    <tr th:each="brokenCar : ${car}" th:field="${brokenCar}">-->
-<!--        <td th:text="${brokenCar.registrationNumber}"></td>-->
-<!--        <td th:text="${brokenCar.name}"></td>-->
-<!--        <td th:text="${brokenCar.color}"></td>-->
-<!--        <td th:text="${brokenCar.yearOfProduction}"></td>-->
-<!--        <td th:text="${brokenCar.dateOfAddCar}"></td>-->
-<!--        <td>-->
-<!--            <a th:href="@{/broken/car/{id}(id=${brokenCar.id})}">-->
-<!--                <button type="button" th:text="#{broken.car.fix}"></button>-->
-<!--            </a>-->
-<!--        </td>-->
-<!--    </tr>-->
-<!--</table>-->
-<!--        <a th:href = "@{/}">-->
-<!--            <button type = "button" th:text = "#{broken.car.back.button}"></button>-->
-<!--        </a>-->
+    <main>
+        <form th:action="@{/broken/car/search}" method="get">
+            <input type="text" name="keyword" th:value="${keyword}" placeholder = "Find by Registration Number"size="50">
+            <input type="submit" th:value="SEARCH">
+        </form>
+        <br>
+        <br>
+        <table>
+    <tr>
+        <th th:text="#{broken.car.registrationNumber}"></th>
+        <th th:text="#{broken.car.name}"></th>
+        <th th:text="#{broken.car.color}"></th>
+        <th th:text="#{broken.car.yearOfProduction}"></th>
+        <th th:text="#{broken.car.add.date}"></th>
+        <th th:text="#{broken.car.isFixed}"></th>
+    </tr>
+    <tr th:each="brokenCar : ${car}" th:field="${brokenCar}">
+        <td th:text="${brokenCar.registrationNumber}"></td>
+        <td th:text="${brokenCar.name}"></td>
+        <td th:text="${brokenCar.color}"></td>
+        <td th:text="${brokenCar.yearOfProduction}"></td>
+        <td th:text="${brokenCar.dateOfAddCar}"></td>
+        <td>
+            <a th:href="@{/broken/car/{id}(id=${brokenCar.id})}">
+                <button type="button" th:text="#{broken.car.fix}"></button>
+            </a>
+        </td>
+    </tr>
+</table>
 </main>
 </div>
 </body>
