@@ -3,28 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title th:text ="#{service.title}"></title>
-    <link th:href="@{styles.css}" rel="stylesheet" type="text/css"/>
-
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/table.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<h1 th:text="#{fixed.cars.headline}"></h1>
-<ul>
-    <li th:text="#{broken.car.registrationNumber} + ': ' + ${car.registrationNumber}"></li>
-    <li th:text="#{broken.car.name} + ': ' + ${car.name}"></li>
-    <li th:text="#{broken.car.color} + ': ' + ${car.color}"></li>
-    <li th:text="#{broken.car.yearOfProduction} + ': ' + ${car.yearOfProduction}"></li>
-    <li th:text="#{broken.car.add.date} + ': ' + ${car.dateOfAddCar}"></li>
-    <div th:switch="${car.isFixed}">
-        <li th:if="${car.isFixed}" th:text="#{broken.car.isFixed} + ': ' + #{broken.car.fixed}"></li>
-        <li th:unless="${car.isFixed}" th:text="#{broken.car.isFixed} + ': ' + ${car.isFixed}"></li>
-    </div>
-</ul>
-<nav>
-    <div>
-        <a th:href = "@{/}">
-            <button type = "button" th:text = "#{fixed.car.back.button}"></button>
+<div th:class="container">
+
+    <nav>
+        <a th:href = "@{/}" th:text="#{main.page}">
         </a>
-    </div>
-</nav>
+        <a th:href = "@{/fixed/car/table}" th:text="#{check.fixed.cars}">
+        </a>
+        <a th:href = "@{/broken/car/table}" th:text="#{check.broken.cars}">
+        </a>
+        <a th:href="@{/car/new}" th:text="#{add.new.car}">
+        </a>
+    </nav>
+
+    <main>
+        <h1 th:text="#{info.fixed.success}"></h1>
+    </main>
+</div>
 </body>
 </html>
