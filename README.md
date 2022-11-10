@@ -28,3 +28,17 @@ The repired vehicles are saved in a JSON file in a separate fixed directory.
 Fixed file names are repaired data, all vehicles that were repaired on the same day are stored in a file.
 In addition, all repaired vehicles are stored in a separated table in database.
 
+
+To try this app how it works go on web:
+
+https://car-serviceml.herokuapp.com/
+
+If you want to open app locally follow the steps:
+  1. Clone repository
+  2. Open via IntelliJ
+  3. Download and Install MySQL Workbench and MySQL server
+  4. Create database (e.g. car_service)
+  5. Change spring.datasource.url, spring.datasource.username and spring.datasource.password in application.properties
+  6. Check if the application connects to the database (use JPA Buddy)
+  7. Run application
+  8. Have fun :)
