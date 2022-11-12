@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface BrokenCarRepository extends JpaRepository<BrokenCar, Long> {
 
-    List<BrokenCar> findBrokenCarByRegistrationNumberAndIsFixed(String registrationNumber, boolean isFixed);
+    List<BrokenCar> findBrokenCarByRegistrationNumber(String registrationNumber);
 }

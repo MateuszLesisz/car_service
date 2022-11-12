@@ -28,8 +28,8 @@ public class BrokenCarService {
         brokenCarRepository.save(brokenCar);
     }
 
-    public List<BrokenCar> getCarByRegistrationNumberAndIsFixed(String registrationNumber, boolean isFixed) {
-        return brokenCarRepository.findBrokenCarByRegistrationNumberAndIsFixed(registrationNumber, isFixed);
+    public List<BrokenCar> getCarByRegistrationNumberAndIsFixed(String registrationNumber) {
+        return brokenCarRepository.findBrokenCarByRegistrationNumber(registrationNumber);
     }
 
     public BrokenCar changeIsFixedToTrue(Long id) {
