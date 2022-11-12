@@ -38,8 +38,4 @@ public class BrokenCarService {
         brokenCar.setFixedDate(LocalDate.now());
         return brokenCarRepository.save(brokenCar);
     }
-
-    public List<BrokenCar> getAllBrokenCars() {
-        return brokenCarRepository.findBrokenCarsByIsFixed(false);
-    }
 }
