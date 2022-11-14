@@ -33,8 +33,8 @@ public class BrokenCarController {
     }
 
     @GetMapping("/search")
-    public String searchBrokenCar(Model model, String registrationNumber) {
-        List<BrokenCar> brokenCars = brokenCarService.getCarByRegistrationNumberAndIsFixed(registrationNumber);
+    public String searchBrokenCar(Model model, String keyword) {
+        List<BrokenCar> brokenCars = brokenCarService.getCarByRegistrationNumberAndIsFixed(keyword, false);
         model.addAttribute("car", brokenCars);
         return "broken-cars-table";
     }

@@ -21,6 +21,7 @@ public class FixedCarService {
                 .fixedDate(LocalDate.now())
                 .brokenCar(brokenCar)
                 .build();
+
         fixedCarRepository.save(fixedCar);
     }
 
