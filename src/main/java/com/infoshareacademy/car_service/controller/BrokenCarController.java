@@ -18,7 +18,7 @@ import java.util.List;
 public class BrokenCarController {
 
     private final BrokenCarRepository brokenCarRepository;
-    private final BrokenCarService brokenCarService;
+    private final BrokenCarService brokenCaService;
 
     @GetMapping("/{id}")
     public String getBrokenCar(@PathVariable Long id, Model model) {
@@ -28,13 +28,13 @@ public class BrokenCarController {
 
     @GetMapping("/table")
     public String getAllBrokenCars(Model model) {
-        model.addAttribute("car", brokenCarRepository.findAll());
+        model.addAttribute("car", brokenCaService.getAllBrokenCars());
         return "broken-cars-table";
     }
 
     @GetMapping("/search")
     public String searchBrokenCar(Model model, String keyword) {
-        List<BrokenCar> brokenCars = brokenCarService.getCarByRegistrationNumberAndIsFixed(keyword, false);
+        List<BrokenCar> brokenCars = brokenCaService.getCarByRegistrationNumberAndIsFixed(keyword, false);
         model.addAttribute("car", brokenCars);
         return "broken-cars-table";
     }
