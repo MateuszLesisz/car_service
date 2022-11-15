@@ -22,35 +22,41 @@
     </nav>
 <main>
     <form th:class="registration" th:object="${car}" th:action="@{/car/new}" method="post">
-        <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
-            <p th:text="#{form.error}"></p>
-            <ul>
-                <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
-            </ul>
-        </div>
+
+        <div>
         <label th:for="registrationNumber_input_id" th:text="#{broken.car.registrationNumber}"></label>
         <br>
         <input type="text" id="registrationNumber_input_id" th:field="*{registrationNumber}">
-        <br>
-        <br>
+            <ul>
+                <li th:each="err : ${#fields.errors('registrationNumber')}" th:text="${err}" class="alert alert-danger"></li>
+            </ul>
+        </div>
+
+        <div>
         <label th:for="name_input_id" th:text="#{broken.car.name}"></label>
         <br>
         <input type="text" id="name_input_id" th:field="*{name}">
-        <br>
-        <br>
+            <ul>
+                <li th:each="err : ${#fields.errors('name')}" th:text="${err}" class="alert alert-danger"></li>
+            </ul>
+        </div>
+
         <label th:for="color_input_id" th:text="#{broken.car.color}"></label>
         <br>
         <select id="color_input_id" th:field="*{color}">
             <option th:each="colorOpt : ${T(com.infoshareacademy.car_service.dto.Color).values()}"
             th:value="${colorOpt}" th:text="${colorOpt.value}"></option>
         </select>
-        <br>
-        <br>
+
+        <div>
         <label th:for="yearOfProduction_input_id" th:text="#{broken.car.yearOfProduction}"></label>
         <br>
         <input type="text" id="yearOfProduction_input_id" th:field="*{yearOfProduction}">
-        <br>
-        <br>
+            <ul>
+                <li th:each="err : ${#fields.errors('yearOfProduction')}" th:text="${err}" class="alert alert-danger"></li>
+            </ul>
+        </div>
+
         <input type="submit" th:value="#{submit.button}">
     </form>
 </main>
