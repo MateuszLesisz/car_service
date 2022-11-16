@@ -1,5 +1,6 @@
 package com.infoshareacademy.car_service.dto;
 
+import com.infoshareacademy.car_service.annotations.DateValidation;
 import lombok.Data;
 
 import javax.validation.constraints.*;
@@ -18,8 +19,7 @@ public class BrokenCarDto {
     private String name;
     private Color color;
     @NotNull(message = "year of production field cannot be empty")
-    @Max(2022)
-    @Min(1800)
+    @DateValidation
     private Integer yearOfProduction;
     private LocalDate dateOfAddCar;
     private Boolean isFixed;
