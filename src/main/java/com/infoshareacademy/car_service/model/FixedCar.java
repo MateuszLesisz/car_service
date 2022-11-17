@@ -1,4 +1,4 @@
-package com.infoshareacademy.car_service.Model;
+package com.infoshareacademy.car_service.model;
 
 import lombok.*;
 

@@ -1,6 +1,6 @@
 package com.infoshareacademy.car_service.controller;
 
-import com.infoshareacademy.car_service.Model.BrokenCar;
+import com.infoshareacademy.car_service.model.BrokenCar;
 import com.infoshareacademy.car_service.repository.BrokenCarRepository;
 import com.infoshareacademy.car_service.service.BrokenCarService;
 import lombok.AllArgsConstructor;

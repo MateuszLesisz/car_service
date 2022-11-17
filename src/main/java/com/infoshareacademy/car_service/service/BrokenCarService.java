@@ -1,6 +1,6 @@
 package com.infoshareacademy.car_service.service;
 
-import com.infoshareacademy.car_service.Model.BrokenCar;
+import com.infoshareacademy.car_service.model.BrokenCar;
 import com.infoshareacademy.car_service.dto.BrokenCarDto;
 import com.infoshareacademy.car_service.repository.BrokenCarRepository;
 import lombok.AllArgsConstructor;

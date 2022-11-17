@@ -1,4 +1,4 @@
-package com.infoshareacademy.car_service.Configuration;
+package com.infoshareacademy.car_service.configuration;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;

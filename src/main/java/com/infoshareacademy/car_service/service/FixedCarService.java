@@ -1,7 +1,7 @@
 package com.infoshareacademy.car_service.service;
 
-import com.infoshareacademy.car_service.Model.BrokenCar;
-import com.infoshareacademy.car_service.Model.FixedCar;
+import com.infoshareacademy.car_service.model.BrokenCar;
+import com.infoshareacademy.car_service.model.FixedCar;
 import com.infoshareacademy.car_service.repository.FixedCarRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

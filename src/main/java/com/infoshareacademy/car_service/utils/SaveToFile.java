@@ -2,13 +2,11 @@ package com.infoshareacademy.car_service.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.infoshareacademy.car_service.Model.BrokenCar;
-import com.infoshareacademy.car_service.Model.FixedCar;
+import com.infoshareacademy.car_service.model.BrokenCar;
+import com.infoshareacademy.car_service.model.FixedCar;
 import com.infoshareacademy.car_service.repository.BrokenCarRepository;
 import com.infoshareacademy.car_service.repository.FixedCarRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import java.io.FileWriter;

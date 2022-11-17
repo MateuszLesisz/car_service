@@ -1,6 +1,6 @@
 package com.infoshareacademy.car_service.repository;
 
-import com.infoshareacademy.car_service.Model.BrokenCar;
+import com.infoshareacademy.car_service.model.BrokenCar;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

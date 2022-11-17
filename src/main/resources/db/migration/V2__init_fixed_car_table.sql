@@ -6,5 +6,5 @@ CREATE TABLE `fixed_car`
     PRIMARY KEY (id),
     CONSTRAINT `fk_car_fixed_car`
         FOREIGN KEY (car_id)
-            REFERENCES `car_service`.`broken_car` (id)
+            REFERENCES `heroku_e4cf55d430b5608`.`broken_car` (id)
 );
