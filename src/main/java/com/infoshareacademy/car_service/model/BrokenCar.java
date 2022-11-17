@@ -8,7 +8,6 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
-@Table
 @Getter
 @Setter
 @Builder
