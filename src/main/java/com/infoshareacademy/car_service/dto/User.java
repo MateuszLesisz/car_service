@@ -20,8 +20,9 @@ public class User {
     private String city;
     @NotBlank(message = "street field cannot be empty")
     private String street;
-    @NotBlank(message = "number/local field cannot be empty")
-    private String numberAndlocal;
+    @NotBlank(message = "house number field cannot be empty")
+    private String houseNumber;
     @NotBlank(message = "zip code field cannot be empty")
     private int zipCode;
+
 }
