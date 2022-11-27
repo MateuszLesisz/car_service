@@ -30,6 +30,7 @@ public class BrokenCar {
 
     @Column
     @NotNull
+    @Enumerated(EnumType.STRING)
     private Color color;
 
     @Column
