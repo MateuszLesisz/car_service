@@ -15,7 +15,7 @@ public class UserService {
     public void createUser(UserDto userDto) {
         User user = User.builder()
                 .name(userDto.getName())
-                .lastname(userDto.getLastname())
+                .lastname(userDto.getLastName())
                 .email(userDto.getEmail())
                 .password(userDto.getPassword())
                 .city(userDto.getCity())

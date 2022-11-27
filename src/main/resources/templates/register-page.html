@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text ="#{service.title}"></title>
+    <link th:href="@{css/style.css}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div th:class="container">
+    <header>
+    </header>
+
+    <nav>
+        <a th:href = "@{broken/car/table}" th:text="#{check.broken.cars}">
+        </a>
+        <a th:href = "@{fixed/car/table}" th:text="#{check.fixed.cars}">
+        </a>
+    </nav>
+
+    <main>
+        <h1 th:text="#{welcome-page.welcome}"></h1>
+        <p th:text="#{info.welcome.page}"></p>
+        <a th:href="@{/car/new}" th:text="#{add.new.car}">
+        </a>
+    </main>
+
+</div>
+</body>
+</html>

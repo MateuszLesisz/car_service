@@ -11,7 +11,7 @@ public class UserDto {
     @NotBlank(message = "name field cannot be empty")
     private String name;
     @NotBlank(message = "lastname field cannot be empty")
-    private String lastname;
+    private String lastName;
     @NotBlank(message = "e-mail field cannot be empty")
     private String email;
     @NotBlank(message = "password field cannot be empty")

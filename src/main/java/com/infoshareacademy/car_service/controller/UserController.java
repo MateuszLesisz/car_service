@@ -1,8 +1,7 @@
 package com.infoshareacademy.car_service.controller;
 
-import com.infoshareacademy.car_service.dto.BrokenCarDto;
-import com.infoshareacademy.car_service.service.BrokenCarService;
-import com.infoshareacademy.car_service.utils.SaveToFile;
+import com.infoshareacademy.car_service.dto.UserDto;
+import com.infoshareacademy.car_service.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,25 +14,23 @@ import javax.validation.Valid;
 
 @Controller
 @AllArgsConstructor
-public class CarController {
+public class UserController {
 
-    private final BrokenCarService carService;
-    private final SaveToFile saveToFile;
+    private final UserService userService;
 
-    @GetMapping("/car/new")
+    @GetMapping("/user/new")
     public String getCarForm(Model model) {
-        model.addAttribute("car", new BrokenCarDto());
-        return "addForm";
+        model.addAttribute("user", new UserDto());
+        return "addNewUserForm";
     }
 
-    @PostMapping("/car/new")
-    public String sendCar(@Valid @ModelAttribute("car") BrokenCarDto brokenCarDto,
+    @PostMapping("/user/new")
+    public String sendCar(@Valid @ModelAttribute("user") UserDto userDto,
                           BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "addForm";
+            return "addNewUserForm";
         }
-        carService.createCar(brokenCarDto);
-        saveToFile.saveToFileBrokenCars();
+        userService.createUser(userDto);
         return "addForm-success";
     }
 }
