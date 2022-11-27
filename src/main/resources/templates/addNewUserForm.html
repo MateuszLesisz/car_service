@@ -9,29 +9,15 @@
 <body>
 <div th:class="container">
     <header>
-        <h1 th:text="#{welcome.page.headline}"></h1>
     </header>
 
     <nav>
-        <a th:href = "@{/fixed/car/table}" th:text="#{check.fixed.cars}">
-        </a>
-        <a th:href = "@{/broken/car/table}" th:text="#{check.broken.cars}">
-        </a>
     </nav>
 <main>
-    <form th:class="registration" th:object="${car}" th:action="@{/car/new}" method="post">
+    <form th:class="registration" th:object="${user}" th:action="@{/user/new}" method="post">
 
         <div>
-        <label th:for="registrationNumber_input_id" th:text="#{broken.car.registrationNumber}"></label>
-        <br>
-        <input type="text" id="registrationNumber_input_id" th:field="*{registrationNumber}">
-            <ul>
-                <li th:each="err : ${#fields.errors('registrationNumber')}" th:text="${err}" class="alert alert-danger"></li>
-            </ul>
-        </div>
-
-        <div>
-        <label th:for="name_input_id" th:text="#{broken.car.name}"></label>
+        <label th:for="name_input_id" th:text="#{user.name}"></label>
         <br>
         <input type="text" id="name_input_id" th:field="*{name}">
             <ul>
@@ -39,19 +25,66 @@
             </ul>
         </div>
 
-        <label th:for="color_input_id" th:text="#{broken.car.color}"></label>
+        <div>
+        <label th:for="lastName_input_id" th:text="#{user.lastName}"></label>
         <br>
-        <select id="color_input_id" th:field="*{color}">
-            <option th:each="colorOpt : ${T(com.infoshareacademy.car_service.dto.Color).values()}"
-            th:value="${colorOpt}" th:text="${colorOpt.value}"></option>
-        </select>
+        <input type="text" id="lastName_input_id" th:field="*{lastName}">
+            <ul>
+                <li th:each="err : ${#fields.errors('lastName')}" th:text="${err}" class="alert alert-danger"></li>
+            </ul>
+        </div>
 
         <div>
-        <label th:for="yearOfProduction_input_id" th:text="#{broken.car.yearOfProduction}"></label>
+        <label th:for="email_input_id" th:text="#{user.email}"></label>
         <br>
-        <input type="text" id="yearOfProduction_input_id" th:field="*{yearOfProduction}">
+            <input type="text" id="email_input_id" th:field="*{email}">
             <ul>
-                <li th:each="err : ${#fields.errors('yearOfProduction')}" th:text="${err}" class="alert alert-danger"></li>
+                <li th:each="err : ${#fields.errors('email')}" th:text="${err}" class="alert alert-danger"></li>
+            </ul>
+
+        </div>
+        <div>
+        <label th:for="password_input_id" th:text="#{user.password}"></label>
+        <br>
+        <input type="text" id="password_input_id" th:field="*{password}">
+            <ul>
+                <li th:each="err : ${#fields.errors('password')}" th:text="${err}" class="alert alert-danger"></li>
+            </ul>
+        </div>
+
+        <div>
+            <label th:for="city_input_id" th:text="#{user.city}"></label>
+            <br>
+            <input type="text" id="city_input_id" th:field="*{city}">
+            <ul>
+                <li th:each="err : ${#fields.errors('city')}" th:text="${err}" class="alert alert-danger"></li>
+            </ul>
+        </div>
+
+        <div>
+            <label th:for="street_input_id" th:text="#{user.street}"></label>
+            <br>
+            <input type="text" id="street_input_id" th:field="*{street}">
+            <ul>
+                <li th:each="err : ${#fields.errors('street')}" th:text="${err}" class="alert alert-danger"></li>
+            </ul>
+        </div>
+
+        <div>
+            <label th:for="houseNumber_input_id" th:text="#{user.house.number}"></label>
+            <br>
+            <input type="text" id="houseNumber_input_id" th:field="*{houseNumber}">
+            <ul>
+                <li th:each="err : ${#fields.errors('houseNumber')}" th:text="${err}" class="alert alert-danger"></li>
+            </ul>
+        </div>
+
+        <div>
+            <label th:for="zipCode_input_id" th:text="#{user.zip.code}"></label>
+            <br>
+            <input type="text" id="zipCode_input_id" th:field="*{zipCode}">
+            <ul>
+                <li th:each="err : ${#fields.errors('zipCode')}" th:text="${err}" class="alert alert-danger"></li>
             </ul>
         </div>
 
