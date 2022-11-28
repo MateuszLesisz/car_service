@@ -1,31 +1,11 @@
 [
   {
     "id": 1,
-    "registrationNumber": "dad",
-    "name": "123123",
-    "color": "WHITE",
-    "yearOfProduction": 1241,
-    "dateOfAddCar": "2022-11-06",
-    "isFixed": true,
-    "fixedDate": "2022-11-06"
-  },
-  {
-    "id": 2,
-    "registrationNumber": "dad",
-    "name": "Mateusz Lesisz",
-    "color": "YELLOW",
-    "yearOfProduction": 1989,
-    "dateOfAddCar": "2022-11-06",
-    "isFixed": true,
-    "fixedDate": "2022-11-06"
-  },
-  {
-    "id": 3,
-    "registrationNumber": "dad",
-    "name": "123123",
-    "color": "PINK",
-    "yearOfProduction": 1777,
-    "dateOfAddCar": "2022-11-06",
+    "registrationNumber": "asdaddf",
+    "name": "Mateusz",
+    "color": "BLUE",
+    "yearOfProduction": 1999,
+    "dateOfAddCar": "2022-11-27",
     "isFixed": false
   }
 ]
