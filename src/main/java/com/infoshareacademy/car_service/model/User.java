@@ -48,6 +48,6 @@ public class User {
 
     @NotNull
     @Column
-    private int zipCode;
+    private String zipCode;
 
 }

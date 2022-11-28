@@ -23,7 +23,7 @@ public class UserDto {
     private String street;
     @NotBlank(message = "house number field cannot be empty")
     private String houseNumber;
-    @NotNull(message = "zip code field cannot be empty")
-    private int zipCode;
+    @NotBlank(message = "zip code field cannot be empty")
+    private String zipCode;
 
 }

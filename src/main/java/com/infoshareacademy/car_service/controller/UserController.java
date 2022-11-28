@@ -21,14 +21,14 @@ public class UserController {
     @GetMapping("/user/new")
     public String getCarForm(Model model) {
         model.addAttribute("user", new UserDto());
-        return "addNewUserForm";
+        return "register-page";
     }
 
     @PostMapping("/user/new")
     public String sendCar(@Valid @ModelAttribute("user") UserDto userDto,
                           BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "addNewUserForm";
+            return "register-page";
         }
         userService.createUser(userDto);
         return "addForm-success";
