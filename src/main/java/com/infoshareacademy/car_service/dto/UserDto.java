@@ -3,6 +3,7 @@ package com.infoshareacademy.car_service.dto;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Data
 public class UserDto {
@@ -22,7 +23,7 @@ public class UserDto {
     private String street;
     @NotBlank(message = "house number field cannot be empty")
     private String houseNumber;
-    @NotBlank(message = "zip code field cannot be empty")
+    @NotNull(message = "zip code field cannot be empty")
     private int zipCode;
 
 }
