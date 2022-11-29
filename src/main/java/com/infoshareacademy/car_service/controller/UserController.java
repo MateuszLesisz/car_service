@@ -31,6 +31,6 @@ public class UserController {
             return "register-page";
         }
         userService.createUser(userDto);
-        return "addForm-success";
+        return "addNewUser-success";
     }
 }

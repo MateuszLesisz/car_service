@@ -32,5 +32,9 @@ public class User {
 
     @NotNull
     @Column
-    private int phoneNumber;
+    private Integer phoneNumber;
+
+    @NotNull
+    @Column
+    private Boolean active;
 }

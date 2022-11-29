@@ -18,6 +18,7 @@ public class UserService {
                 .email(userDto.getEmail())
                 .password(userDto.getPassword())
                 .phoneNumber(userDto.getPhoneNumber())
+                .active(false)
                 .build();
        userRepository.save(user);
     }

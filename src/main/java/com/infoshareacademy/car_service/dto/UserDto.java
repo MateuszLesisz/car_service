@@ -16,5 +16,6 @@ public class UserDto {
     @NotBlank(message = "password field cannot be empty")
     private String password;
     @NotNull(message = "phone field cannot be null")
-    private int phoneNumber;
+    private Integer phoneNumber;
+    private Boolean active;
 }
