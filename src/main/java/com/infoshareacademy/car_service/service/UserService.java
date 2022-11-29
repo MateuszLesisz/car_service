@@ -29,7 +29,7 @@ public class UserService {
     public Optional<User> isUserAlreadyExists(String email) {
         Optional<User> user = userRepository.findUserByEmail(email);
 
-        if(user.isEmpty()) {
+        if(user.isPresent()) {
             throw new UserAlreadyExistsException(email);
         }
         return user;

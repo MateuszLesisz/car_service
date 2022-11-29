@@ -27,6 +27,7 @@ public class UserController {
     @PostMapping("login")
     public String sendCar(@Valid @ModelAttribute("user") UserDto userDto,
                           BindingResult bindingResult) {
+        userService.isUserAlreadyExists(userDto.getEmail());
         if (bindingResult.hasErrors()) {
             return "register-page";
         }
