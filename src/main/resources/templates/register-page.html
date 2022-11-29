@@ -12,15 +12,29 @@
    </div>
 
     <main>
-        <div id="login-box">
-            <div class="left">
-                <h2>Sign up</h2>
+        <div th:id="login-box">
+            <div th:class="left" th:object="${user}" th:action="@{/login}" method="post">
+                <h2 th:text="#{sign.up}"></h2>
 
-                <input type="text" name="username" placeholder="Username" />
-                <input type="text" name="email" placeholder="E-mail" />
-                <input type="password" name="password" placeholder="Password" />
-                <input type="password" name="password2" placeholder="Retype password" />
+                <input type="text" id="username_input_id" th:field="*{username}" th:placeholder="Username">
+                <ul>
+                    <li th:each="err : ${#fields.errors('username')}" th:text="${err}" class="alert alert-danger"></li>
+                </ul>
 
+                <input type="text" id="email_input_id" th:field="*{email}" th:placeholder="Email">
+                <ul>
+                    <li th:each="err : ${#fields.errors('email')}" th:text="${err}" class="alert alert-danger"></li>
+                </ul>
+
+                <input type="text" id="password_input_id" th:field="*{password}" th:placeholder="Password">
+                <ul>
+                    <li th:each="err : ${#fields.errors('password')}" th:text="${err}" class="alert alert-danger"></li>
+                </ul>
+
+                <input type="text" id="phoneNumber_input_id" th:field="*{phoneNumber}" th:placeholder="Phone">
+                <ul>
+                    <li th:each="err : ${#fields.errors('phoneNumber')}" th:text="${err}" class="alert alert-danger"></li>
+                </ul>
 
                 <input type="submit" name="signup_submit" value="Sign me up" />
             </div>

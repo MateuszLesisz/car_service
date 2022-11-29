@@ -18,13 +18,13 @@ public class UserController {
 
     private final UserService userService;
 
-    @GetMapping()
+    @GetMapping("login")
     public String getCarForm(Model model) {
         model.addAttribute("user", new UserDto());
         return "register-page";
     }
 
-    @PostMapping()
+    @PostMapping("login")
     public String sendCar(@Valid @ModelAttribute("user") UserDto userDto,
                           BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {

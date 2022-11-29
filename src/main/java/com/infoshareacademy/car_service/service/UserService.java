@@ -14,14 +14,10 @@ public class UserService {
 
     public void createUser(UserDto userDto) {
         User user = User.builder()
-                .name(userDto.getName())
-                .lastName(userDto.getLastName())
+                .username(userDto.getUsername())
                 .email(userDto.getEmail())
                 .password(userDto.getPassword())
-                .city(userDto.getCity())
-                .street(userDto.getStreet())
-                .houseNumber(userDto.getHouseNumber())
-                .zipCode(userDto.getZipCode())
+                .phoneNumber(userDto.getPhoneNumber())
                 .build();
        userRepository.save(user);
     }

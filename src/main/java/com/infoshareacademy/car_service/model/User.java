@@ -20,11 +20,7 @@ public class User {
 
     @NotNull
     @Column
-    private String name;
-
-    @NotNull
-    @Column
-    private String lastName;
+    private String username;
 
     @NotNull
     @Column
@@ -36,18 +32,5 @@ public class User {
 
     @NotNull
     @Column
-    private String city;
-
-    @NotNull
-    @Column
-    private String street;
-
-    @NotNull
-    @Column
-    private String houseNumber;
-
-    @NotNull
-    @Column
-    private String zipCode;
-
+    private int phoneNumber;
 }
