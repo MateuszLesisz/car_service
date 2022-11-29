@@ -1,6 +1,6 @@
 package com.infoshareacademy.car_service.dto;
 
-import com.infoshareacademy.car_service.annotations.DateValidation;
+import com.infoshareacademy.car_service.annotations.date.DateValidation;
 import lombok.Data;
 
 import javax.validation.constraints.*;

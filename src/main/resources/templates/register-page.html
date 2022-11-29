@@ -2,52 +2,52 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text ="#{service.title}"></title>
+    <title th:text="#{service.title}"></title>
     <link th:href="@{/css/registerform.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
-   <div th:class="headline">
-        <h1 th:text="#{welcome.page.headline}"></h1>
-   </div>
+<div th:class="headline">
+    <h1 th:text="#{welcome.page.headline}"></h1>
+</div>
 
-    <main>
-        <div th:id="login-box">
-            <form th:class="left" th:object="${user}" th:action="@{/login}" th:method="post">
-                <h2 th:text="#{sign.up}"></h2>
+<main>
+    <div th:id="login-box">
+        <form th:class="left" th:object="${user}" th:action="@{/login}" th:method="post">
+            <h2 th:text="#{sign.up}"></h2>
 
-                <input type="text" id="username_input_id" th:field="*{username}" th:placeholder="Username">
-                <ul>
-                    <li th:each="err : ${#fields.errors('username')}" th:text="${err}" th:class="alert alert-danger"></li>
-                </ul>
+            <input type="text" id="username_input_id" th:field="*{username}" th:placeholder="Username">
+            <ul>
+                <li th:each="err : ${#fields.errors('username')}" th:text="${err}" class="alert alert-danger"></li>
+            </ul>
 
-                <input type="text" id="email_input_id" th:field="*{email}" th:placeholder="Email">
-                <ul>
-                    <li th:each="err : ${#fields.errors('email')}" th:text="${err}" th:class="alert alert-danger"></li>
-                </ul>
+            <input type="text" id="email_input_id" th:field="*{email}" th:placeholder="Email">
+            <ul>
+                <li th:each="err : ${#fields.errors('email')}" th:text="${err}" class="alert alert-danger"></li>
+            </ul>
 
-                <input type="text" id="password_input_id" th:field="*{password}" th:placeholder="Password">
-                <ul>
-                    <li th:each="err : ${#fields.errors('password')}" th:text="${err}" th:class="alert alert-danger"></li>
-                </ul>
+            <input type="text" id="password_input_id" th:field="*{password}" th:placeholder="Password">
+            <ul>
+                <li th:each="err : ${#fields.errors('password')}" th:text="${err}" class="alert alert-danger"></li>
+            </ul>
 
-                <input type="text" id="phoneNumber_input_id" th:field="*{phoneNumber}" th:placeholder="Phone" value="">
-                <ul>
-                    <li th:each="err : ${#fields.errors('phoneNumber')}" th:text="${err}" th:class="alert alert-danger"></li>
-                </ul>
+            <input type="text" id="phoneNumber_input_id" th:field="*{phoneNumber}" th:placeholder="Phone" value="">
+            <ul>
+                <li th:each="err : ${#fields.errors('phoneNumber')}" th:text="${err}" class="alert alert-danger"></li>
+            </ul>
 
-                <input th:type="submit" th:name="signup_submit" th:value="#{sign.me.up}" />
-            </form>
+            <input th:type="submit" th:name="signup_submit" th:value="#{sign.me.up}"/>
+        </form>
 
-            <div th:class="right">
-                <span class="loginwith">Sign in with<br />social network</span>
+        <div th:class="right">
+            <span class="loginwith">Sign in with<br/>social network</span>
 
-                <button class="social-signin facebook">Log in with facebook</button>
-                <button class="social-signin twitter">Log in with Twitter</button>
-                <button class="social-signin google">Log in with Google+</button>
-            </div>
-            <div class="or">OR</div>
+            <button class="social-signin facebook">Log in with facebook</button>
+            <button class="social-signin twitter">Log in with Twitter</button>
+            <button class="social-signin google">Log in with Google+</button>
         </div>
-    </main>
+        <div class="or">OR</div>
+    </div>
+</main>
 </body>
 </html>

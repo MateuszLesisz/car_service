@@ -1,5 +1,6 @@
 package com.infoshareacademy.car_service.dto;
 
+import com.infoshareacademy.car_service.annotations.email.EmailValidation;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -12,6 +13,7 @@ public class UserDto {
     @NotBlank(message = "username field cannot be empty")
     private String username;
     @NotBlank(message = "e-mail field cannot be empty")
+    @EmailValidation
     private String email;
     @NotBlank(message = "password field cannot be empty")
     private String password;

@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+
 *:focus {
     outline: none;
 }
@@ -18,9 +19,15 @@ body {
 }
 
 .headline {
-    text-align: center;
+    text-alóign: center;
     padding-top: 14px;
     padding-bottom: 14px;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
 }
 
 #login-box {
