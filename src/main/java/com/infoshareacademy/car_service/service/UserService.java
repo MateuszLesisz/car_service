@@ -1,10 +1,13 @@
 package com.infoshareacademy.car_service.service;
 
 import com.infoshareacademy.car_service.dto.UserDto;
+import com.infoshareacademy.car_service.exception.user.UserAlreadyExistsException;
 import com.infoshareacademy.car_service.model.User;
 import com.infoshareacademy.car_service.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -21,5 +24,14 @@ public class UserService {
                 .active(false)
                 .build();
        userRepository.save(user);
+    }
+
+    public Optional<User> isUserAlreadyExists(String email) {
+        Optional<User> user = userRepository.findUserByEmail(email);
+
+        if(user.isEmpty()) {
+            throw new UserAlreadyExistsException(email);
+        }
+        return user;
     }
 }
