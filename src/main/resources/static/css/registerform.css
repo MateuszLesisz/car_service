@@ -19,7 +19,7 @@ body {
 }
 
 .headline {
-    text-alóign: center;
+    text-align: center;
     padding-top: 14px;
     padding-bottom: 14px;
 }
@@ -55,6 +55,7 @@ h1 {
     font-weight: 300;
     font-size: 50px;
     color: white;
+    text-align: center;
 }
 
 h2 {
