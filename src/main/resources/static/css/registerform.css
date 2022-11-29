@@ -25,9 +25,11 @@ body {
 }
 
 .alert-danger {
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
+    color: #ff3860;;
+    font-size: 12px;
+    height: 0;
+    list-style-type: none;
+    padding: 0;
 }
 
 #login-box {
@@ -69,8 +71,6 @@ input[type="text"],
 input[type="password"] {
     display: block;
     box-sizing: border-box;
-    margin-bottom: 20px;
-    padding: 4px;
     width: 220px;
     height: 32px;
     border: none;
@@ -89,7 +89,6 @@ input[type="password"]:focus {
 }
 
 input[type="submit"] {
-    margin-top: 28px;
     width: 120px;
     height: 32px;
     background: #16a085;

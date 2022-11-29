@@ -21,6 +21,7 @@
                 <li th:each="err : ${#fields.errors('username')}" th:text="${err}" class="alert alert-danger"></li>
             </ul>
 
+
             <input type="text" id="email_input_id" th:field="*{email}" th:placeholder="Email">
             <ul>
                 <li th:each="err : ${#fields.errors('email')}" th:text="${err}" class="alert alert-danger"></li>
