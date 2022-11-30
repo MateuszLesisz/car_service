@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final EmailSenderService emailSenderService;
+    private static final String SUBJECT = "Car Service Registration";
+    private static final String BODY = "Below is a registration link. Click it to activate your account";
 
     public void createUser(UserDto userDto) {
         User user = User.builder()
@@ -21,5 +24,6 @@ public class UserService {
                 .active(false)
                 .build();
         userRepository.save(user);
+        emailSenderService.sendEmail(user.getEmail(), SUBJECT,  BODY);
     }
 }
