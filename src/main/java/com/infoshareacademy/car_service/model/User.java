@@ -33,8 +33,4 @@ public class User {
     @NotNull
     @Column
     private Integer phoneNumber;
-
-    @NotNull
-    @Column
-    private Boolean active;
 }

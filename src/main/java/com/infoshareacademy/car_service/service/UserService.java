@@ -12,8 +12,8 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final EmailSenderService emailSenderService;
-    private static final String SUBJECT = "Car Service Registration";
-    private static final String BODY = "Below is a registration link. Click it to activate your account";
+    private static final String SUBJECT = "Car Service";
+    private static final String BODY = "Welcome in our service!\nNow u can repair your car.";
 
     public void createUser(UserDto userDto) {
         User user = User.builder()
@@ -21,7 +21,6 @@ public class UserService {
                 .email(userDto.getEmail())
                 .password(userDto.getPassword())
                 .phoneNumber(userDto.getPhoneNumber())
-                .active(false)
                 .build();
         userRepository.save(user);
         emailSenderService.sendEmail(user.getEmail(), SUBJECT,  BODY);

@@ -21,5 +21,4 @@ public class UserDto {
     private String password;
     @NotNull(message = "phone field cannot be null")
     private Integer phoneNumber;
-    private Boolean active;
 }
