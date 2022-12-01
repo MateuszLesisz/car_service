@@ -6,6 +6,12 @@
     <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+
+<nav>
+    <a th:href = "@{/login}" th:text="#{login.user}">
+    </a>
+</nav>
+
 <div th:class="container">
     <main>
         <h1 th:text="#{info.success.add.user.page}"></h1>
