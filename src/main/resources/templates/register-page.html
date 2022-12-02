@@ -43,13 +43,13 @@
         <div th:class="right">
             <span th:class="loginwith" th:text="#{sign.in.with}"><br/></span>
 
-            <button class="social-signin login">Log in with credentials</button>
-            <button class="social-signin facebook">Log in with facebook</button>
-            <button class="social-signin twitter">Log in with Twitter</button>
-            <button class="social-signin google">Log in with Google+</button>
+            <button class="social-signin google" th:text="#{log.in.credentials}"></button>
+            <button class="social-signin facebook" th:text="#{log.in.facebook}"></button>
+            <button class="social-signin twitter" th:text="#{log.in.twitter}"></button>
+            <button class="social-signin google" th:text="#{log.in.google}"></button>
 
         </div>
-        <div class="or">OR</div>
+        <div class="or" th:text="#{or}"></div>
     </div>
 </main>
 </body>
