@@ -14,17 +14,14 @@
 <main>
     <div th:id="login-box">
         <div th:class="left">
-            <button class="social-signin form" th:text="#{sign.me.up}"></button>
+            <a th:href = "@{/welcomePage}">
+                <button class="social-signin form" type="button" th:text="#{log.in.credentials}">
+                </button>
+            </a>
         </div>
 
         <div th:class="right">
             <span th:class="loginwith" th:text="#{sign.in.with}"><br/></span>
-
-            <a th:href = "@{/welcomePage}">
-                <button class="social-signin google" type="button" th:text="#{log.in.credentials}">
-                </button>
-            </a>
-
             <button class="social-signin facebook" th:text="#{log.in.facebook}"></button>
             <button class="social-signin twitter" th:text="#{log.in.twitter}"></button>
             <button class="social-signin google" th:text="#{log.in.google}"></button>
