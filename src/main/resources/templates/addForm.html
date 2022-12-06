@@ -19,6 +19,8 @@
         </a>
         <a th:href = "@{/broken/car/table}" th:text="#{check.broken.cars}">
         </a>
+        <a th:href = "@{/logout}" th:text="#{logout}">
+        </a>
     </nav>
 <main>
     <form th:class="registration" th:object="${car}" th:action="@{/car/new}" method="post">
