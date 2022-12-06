@@ -13,32 +13,9 @@
 
 <main>
     <div th:id="login-box">
-        <form th:class="left" th:object="${user}" th:action="@{/login}" th:method="post">
-            <h2 th:text="#{sign.up}"></h2>
-
-            <input type="text" id="username_input_id" th:field="*{username}" th:placeholder="Username">
-            <ul>
-                <li th:each="err : ${#fields.errors('username')}" th:text="${err}" class="alert alert-danger"></li>
-            </ul>
-
-
-            <input type="text" id="email_input_id" th:field="*{email}" th:placeholder="Email">
-            <ul>
-                <li th:each="err : ${#fields.errors('email')}" th:text="${err}" class="alert alert-danger"></li>
-            </ul>
-
-            <input type="text" id="password_input_id" th:field="*{password}" th:placeholder="Password">
-            <ul>
-                <li th:each="err : ${#fields.errors('password')}" th:text="${err}" class="alert alert-danger"></li>
-            </ul>
-
-            <input type="text" id="phoneNumber_input_id" th:field="*{phoneNumber}" th:placeholder="Phone" value="">
-            <ul>
-                <li th:each="err : ${#fields.errors('phoneNumber')}" th:text="${err}" class="alert alert-danger"></li>
-            </ul>
-
-            <input th:type="submit" th:name="signup_submit" th:value="#{sign.me.up}"/>
-        </form>
+        <div th:class="left">
+            <button class="social-signin form" th:text="#{sign.me.up}"></button>
+        </div>
 
         <div th:class="right">
             <span th:class="loginwith" th:text="#{sign.in.with}"><br/></span>
