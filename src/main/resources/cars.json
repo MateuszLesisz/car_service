@@ -1,11 +1,12 @@
 [
   {
     "id": 1,
-    "registrationNumber": "asdaddf",
-    "name": "Mateusz",
+    "registrationNumber": "tki7808k",
+    "name": "123123",
     "color": "BLUE",
     "yearOfProduction": 1999,
-    "dateOfAddCar": "2022-11-27",
-    "isFixed": false
+    "dateOfAddCar": "2022-12-07",
+    "isFixed": true,
+    "fixedDate": "2022-12-07"
   }
 ]
