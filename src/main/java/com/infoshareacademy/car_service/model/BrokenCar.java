@@ -48,4 +48,7 @@ public class BrokenCar {
     @Column
     private LocalDate fixedDate;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }
