@@ -128,27 +128,6 @@ input[type="submit"]:active {
     text-align: center;
 }
 
-.signup .signupwith {
-    display: block;
-    margin-bottom: 40px;
-    font-size: 28px;
-    color: #FFF;
-    text-align: center;
-}
-
-button.signin {
-    margin-bottom: 20px;
-    width: 220px;
-    height: 36px;
-    border: none;
-    border-radius: 2px;
-    color: #FFF;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    transition: 0.2s ease;
-    cursor: pointer;
-}
-
 .right {
     position: absolute;
     top: 0;
@@ -205,9 +184,4 @@ button.social-signin.twitter {
 
 button.social-signin.google {
     background: #DD4B39;
-}
-
-button.social-signin.form {
-    background: #DD4B39;
-    margin-top: 145px;
 }
