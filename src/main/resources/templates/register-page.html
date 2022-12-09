@@ -13,7 +13,7 @@
 
 <main>
     <div th:id="login-box">
-        <form th:class="left" th:object="${user}" th:action="@{/login}" th:method="post">
+        <form th:class="left" th:object="${user}" th:action="@{/registration}" th:method="post">
             <h2 th:text="#{sign.up}"></h2>
 
             <input type="text" id="username_input_id" th:field="*{username}" th:placeholder="Username">

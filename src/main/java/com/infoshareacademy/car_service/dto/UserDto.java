@@ -10,7 +10,6 @@ import javax.validation.constraints.NotNull;
 @Data
 public class UserDto {
 
-    private Long id;
     @NotBlank(message = "username field cannot be empty")
     @UsernameValidation
     private String username;
