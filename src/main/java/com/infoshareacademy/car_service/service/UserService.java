@@ -5,6 +5,9 @@ import com.infoshareacademy.car_service.model.Role;
 import com.infoshareacademy.car_service.model.User;
 import com.infoshareacademy.car_service.repository.UserRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -12,7 +15,7 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-public class UserService {
+public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
     private final EmailSenderService emailSenderService;
@@ -29,5 +32,10 @@ public class UserService {
                 .build();
         userRepository.save(user);
         emailSenderService.sendEmail(user.getEmail(), SUBJECT,  BODY);
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return null;
     }
 }
