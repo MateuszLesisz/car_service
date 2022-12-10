@@ -1,14 +1,10 @@
 package com.infoshareacademy.car_service.service;
 
 import com.infoshareacademy.car_service.dto.UserDto;
-import com.infoshareacademy.car_service.model.Role;
 import com.infoshareacademy.car_service.model.User;
 import com.infoshareacademy.car_service.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.Arrays;
-import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -25,7 +21,6 @@ public class UserService {
                 .email(userDto.getEmail())
                 .password(userDto.getPassword())
                 .phoneNumber(userDto.getPhoneNumber())
-                .role(List.of(new Role("ROLE_USER")))
                 .build();
         userRepository.save(user);
         emailSenderService.sendEmail(user.getEmail(), SUBJECT,  BODY);

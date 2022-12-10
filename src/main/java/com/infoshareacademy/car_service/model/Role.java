@@ -22,8 +22,4 @@ public class Role {
     @NotNull
     @Column
     private String name;
-
-    public Role(String name) {
-        this.name = name;
-    }
 }
