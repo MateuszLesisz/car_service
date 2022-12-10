@@ -1,12 +1,17 @@
 # Car servic - web app
 
-Scope: Spring Boot, Spring MVC, HTTP, Thymeleaf, CSS, HTML, JSON, OOP, MYSQL, Hibernate, JPA, Flyway, clean code, data structures.
+Scope: Spring Boot, Spring MVC, HTTP, Thymeleaf, CSS, HTML, JSON, OOP, MYSQL, Hibernate, JPA, Flyway, clean code, data structures, Keycloak
 
 App enables:
 1. Display the list of active vehicles (accepted for service, not repaired)
 2. Adding a new vehicle (acceptance to service)
 3. Repair of the vehicle
 4. Writing and loading vehicle data from the database
+5. Register and login user using keycloak.
+
+Register and login system:
+User registration and login is done via the keycloak application. After registration the user is saved to the database. When loggin in, it is checked whether the user is in the database.If so, you are redirected to the application. An external user without knowing the endpoints is unable to log in to the application. After using the application, the user can log out and thus return to the login page.
+
 
 Acceptance of the car for service:
 
@@ -31,7 +36,7 @@ In addition, all repaired vehicles are stored in a separated table in database.
 
 To try this app how it works go on web:
 
-https://car-serviceml.herokuapp.com/
+https://car-serviceml.herokuapp.com/ - currently not deployed
 
 If you want to open app locally follow the steps:
   1. Clone repository
