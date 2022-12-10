@@ -1,6 +1,6 @@
 # Car servic - web app
 
-Scope: Spring Boot, Spring MVC, HTTP, Thymeleaf, CSS, HTML, JSON, OOP, MYSQL, Hibernate, JPA, Flyway, clean code, data structures, Keycloak
+Scope: Spring Boot, Spring MVC,Spring Security, HTTP, Thymeleaf, CSS, HTML, JSON, OOP, MYSQL, Hibernate, JPA, Flyway, clean code, data structures, Keycloak
 
 App enables:
 1. Display the list of active vehicles (accepted for service, not repaired)
