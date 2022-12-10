@@ -23,7 +23,6 @@ public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
     private final EmailSenderService emailSenderService;
-    private final BCryptPasswordEncoder passwordEncoder;
     private static final String SUBJECT = "Car Service";
     private static final String BODY = "Welcome in our service!\nNow u can repair your car.";
 
@@ -31,7 +30,7 @@ public class UserService implements UserDetailsService {
         User user = User.builder()
                 .username(userDto.getUsername())
                 .email(userDto.getEmail())
-                .password(passwordEncoder.encode(userDto.getPassword()))
+                .password(userDto.getPassword())
                 .phoneNumber(userDto.getPhoneNumber())
                 .role(List.of(new Role("ROLE_USER")))
                 .build();
