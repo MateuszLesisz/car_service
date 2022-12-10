@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -30,7 +31,7 @@ public class UserService implements UserDetailsService {
                 .role(List.of(new Role("ROLE_USER")))
                 .build();
         userRepository.save(user);
-        emailSenderService.sendEmail(user.getEmail(), SUBJECT, BODY);
+        emailSenderService.sendEmail(user.getEmail(), SUBJECT,  BODY);
     }
 
     @Override
